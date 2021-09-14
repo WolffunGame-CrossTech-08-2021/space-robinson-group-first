@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: 508841987250310357
     second: hands_piston
+  - first:
+      213: 1216807567700295890
+    second: monster_cactus_green_idle_01
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -497,7 +500,7 @@ TextureImporter:
         width: 24
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -518,7 +521,7 @@ TextureImporter:
         width: 11
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -526,6 +529,27 @@ TextureImporter:
       bones: []
       spriteID: 5dccbd86715cf0700800000000000000
       internalID: 508841987250310357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_cactus_green_idle_01
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1402
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d088c03908f2e010800000000000000
+      internalID: 1216807567700295890
       vertices: []
       indices: 
       edges: []

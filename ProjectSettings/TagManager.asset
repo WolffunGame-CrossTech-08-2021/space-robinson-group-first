@@ -53,6 +53,9 @@ TagManager:
   - name: SecondWeapon
     uniqueID: 479011653
     locked: 0
+  - name: PlayerShadow
+    uniqueID: 2127687085
+    locked: 0
   - name: Player
     uniqueID: 1589663975
     locked: 0

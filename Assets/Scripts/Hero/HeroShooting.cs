@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroShooting : MonoBehaviour
+public class HeroShooting : BaseComponentUpdate
 {
+    public Transform Transform_WeaponAndHands;
+
     public Transform player;
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
 
+    [SerializeField]
     private AudioSource _shootingAudio;
 
-    private void Awake()
+    private void OnValidate()
     {
-
-        _shootingAudio = GetComponent<AudioSource>();
+        if (_shootingAudio == null)
+            _shootingAudio = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    public override void DoUpdate()
     {
 
         Turning();
@@ -33,18 +36,18 @@ public class HeroShooting : MonoBehaviour
         mousePos.z = 10;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direct = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        Vector2 direct = new Vector2(mousePos.x - Transform_WeaponAndHands.position.x, mousePos.y - Transform_WeaponAndHands.position.y);
         
 
         if (mousePos.x > player.position.x + 0.1f)
         {
-            transform.right = direct;
+            Transform_WeaponAndHands.right = direct;
             return;
         }
 
         if (mousePos.x < player.position.x - 0.1f)
         {
-            transform.right = -direct;
+            Transform_WeaponAndHands.right = -direct;
             return;
         }
 

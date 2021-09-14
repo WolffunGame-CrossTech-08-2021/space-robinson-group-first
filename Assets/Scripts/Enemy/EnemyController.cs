@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     //}
 
 
-    public float HeroDetectRadius =2f; // Khoang cach nhan biet cua bot
+    public float HeroDetectRadius = 2f; // Khoang cach nhan biet cua bot
     public float StopDistance = 0.2f;
     public Transform target;
     private Vector2 destination;

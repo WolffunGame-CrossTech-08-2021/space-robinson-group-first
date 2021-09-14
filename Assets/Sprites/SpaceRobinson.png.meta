@@ -38,6 +38,9 @@ TextureImporter:
   - first:
       213: 1216807567700295890
     second: monster_cactus_green_idle_01
+  - first:
+      213: 3865064841676244288
+    second: character_shadow
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -542,7 +545,7 @@ TextureImporter:
         width: 28
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -550,6 +553,27 @@ TextureImporter:
       bones: []
       spriteID: 2d088c03908f2e010800000000000000
       internalID: 1216807567700295890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_shadow
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 972
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045c6f9def773a530800000000000000
+      internalID: 3865064841676244288
       vertices: []
       indices: 
       edges: []

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HeroMovement : MonoBehaviour
+public class HeroMovement : BaseComponentUpdate
 {
     public float moveSpeed = 5f;
     public Camera cam;
@@ -19,17 +19,19 @@ public class HeroMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    public override void DoUpdate()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Move();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        
 
         // Vector2 lookDir = mousePos - rb.position;
         // float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;

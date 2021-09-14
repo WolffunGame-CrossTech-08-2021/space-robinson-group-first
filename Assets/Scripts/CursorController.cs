@@ -17,7 +17,7 @@ public class CursorController : MonoBehaviour
 
     void Update()
     {
-        // anim.SetBool("LeftMouseClick", Input.GetMouseButtonDown(0));
+        anim.SetBool("LeftMouseClick", Input.GetMouseButtonDown(0));
 
         cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = cursorPosition;

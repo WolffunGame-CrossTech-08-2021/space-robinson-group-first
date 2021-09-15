@@ -41,6 +41,18 @@ TextureImporter:
   - first:
       213: 3865064841676244288
     second: character_shadow
+  - first:
+      213: 5889335440569885730
+    second: ground_ship_02
+  - first:
+      213: -4683384535408061496
+    second: ground_ship_03
+  - first:
+      213: 3674906435769481467
+    second: wall_ship_top_01
+  - first:
+      213: -7397237028683976640
+    second: wall_ship_02
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -80,11 +92,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteExtrude: 32
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -574,6 +586,132 @@ TextureImporter:
       bones: []
       spriteID: 045c6f9def773a530800000000000000
       internalID: 3865064841676244288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_01
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 2528
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1154097028a6a40800000000000000
+      internalID: 5362241275334824415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_02
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 2528
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2246942516f1bb150800000000000000
+      internalID: 5889335440569885730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_03
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 2528
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3d1742496410fb0800000000000000
+      internalID: -4683384535408061496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_ship_01
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 2463
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47a47c8d06fc9840800000000000000
+      internalID: 5232327405149136715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_ship_top_01
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 2350
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf836decee3eff230800000000000000
+      internalID: 3674906435769481467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_ship_02
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 2461
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040fce95d1cb75990800000000000000
+      internalID: -7397237028683976640
       vertices: []
       indices: 
       edges: []

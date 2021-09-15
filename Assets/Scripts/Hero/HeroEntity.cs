@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class HeroEntity : MonoBehaviour
 {
-    public List<BaseComponentUpdate> ComponentUpdates = new List<BaseComponentUpdate>();
+    [SerializeField] private List<BaseComponentUpdate> ComponentUpdates;
 
-    private int numComponents = 0;
+    private int _numComponents = 0;
 
     private void OnValidate()
     {
-        ComponentUpdates.Clear();
+        ComponentUpdates = new List<BaseComponentUpdate>();
         // ComponentUpdates.AddRange(GetComponents<BaseComponentUpdate>());
         ComponentUpdates.AddRange(GetComponentsInChildren<BaseComponentUpdate>());
     }
 
     private void Start()
     {
-       numComponents = ComponentUpdates.Count;
+        _numComponents = ComponentUpdates.Count;
     }
 
 
     private void Update()
     {
-        for (int i = 0; i < numComponents; i++)
+        for (int i = 0; i < _numComponents; i++)
             ComponentUpdates[i].DoUpdate();
     }
 }

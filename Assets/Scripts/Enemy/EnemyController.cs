@@ -30,9 +30,7 @@ public class EnemyController : MonoBehaviour
     {
         _destination.x = Target.position.x - _rigidbody.position.x;
         _destination.y = Target.position.y - _rigidbody.position.y;
-        // _rigidbody.MovePosition(_rigidbody.position + _destination * MoveSpeed * Time.fixedDeltaTime);
-        _rigidbody.MovePosition(new Vector2(10f, 10f));
-        Debug.Log(_destination);
+        _rigidbody.MovePosition(_rigidbody.position + _destination * MoveSpeed * Time.fixedDeltaTime);
     }
 
     private void OnDrawGizmosSelected()

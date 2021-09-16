@@ -8,5 +8,6 @@
 - 04/09/2021: Start project
 - 11/09/2021: Learning tilemap and map collider, map animaion
 - 14/09/2021: Learning character animaion, cursor animaion and camera follow cursor
+- 16/09/2021: Trung has been infected with COVID-19
 
 ## Release 

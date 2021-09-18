@@ -70,8 +70,13 @@ public class HeroShooting : BaseComponentUpdate
     {
         PooledObject bullet = Pool.Instance.Spawn(BulletPrefab, FirePoint.position, FirePoint.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb = bullet.As<Bullet>().Rb2D;
-        Vector3 dir = Quaternion.AngleAxis(Random.Range(-MissingAngle, MissingAngle), Vector3.forward) * FirePoint.up;
+        float angle = Random.Range(-MissingAngle, MissingAngle);
+        Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * FirePoint.up;
         rb.AddForce(dir * BulletForce, ForceMode2D.Impulse);
+
+        Vector3 eulerAngles = rb.transform.eulerAngles;
+        eulerAngles.z += angle;
+        rb.transform.eulerAngles = eulerAngles;
 
         _shootingAudio.Stop();
         _shootingAudio.Play();

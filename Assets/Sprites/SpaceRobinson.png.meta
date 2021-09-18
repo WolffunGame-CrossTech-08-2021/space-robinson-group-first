@@ -53,6 +53,15 @@ TextureImporter:
   - first:
       213: -7397237028683976640
     second: wall_ship_02
+  - first:
+      213: -5446085042090935074
+    second: logo_space_robinson
+  - first:
+      213: -1314898506392856406
+    second: chest_skull
+  - first:
+      213: 4387474500206543060
+    second: auto_door_05
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -704,7 +713,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -712,6 +721,174 @@ TextureImporter:
       bones: []
       spriteID: 040fce95d1cb75990800000000000000
       internalID: -7397237028683976640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_space_robinson
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 3652
+        width: 255
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcf991428e9b64b0800000000000000
+      internalID: -5446085042090935074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_skull
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1494
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa813ca66ca80cde0800000000000000
+      internalID: -1314898506392856406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_01
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 2062
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e70a8a8048695c70800000000000000
+      internalID: 8960307560041809890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_02
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 2006
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3e2e81cdee43b30800000000000000
+      internalID: 4266297376104440764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_04
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 2071
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68112f4b180786aa0800000000000000
+      internalID: -6167555987295039098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_06
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 2070
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311456679a70e9b20800000000000000
+      internalID: 3142958014368399635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_03
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2069
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8338ecad12c6848f0800000000000000
+      internalID: -556075661319568584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: auto_door_05
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 3588
+        width: 94
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d045e5efc073ec30800000000000000
+      internalID: 4387474500206543060
       vertices: []
       indices: 
       edges: []

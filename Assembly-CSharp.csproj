@@ -53,6 +53,7 @@
     <UnityVersion>2019.4.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\AutoDoorController.cs" />
     <Compile Include="Assets\Scripts\AI\RotateInstantly.cs" />
     <Compile Include="Assets\Scripts\AI\RotateSmoothly.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -723,6 +724,9 @@
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
+    <Reference Include="Fluid.BehaviorTree.Editor">
+      <HintPath>Library\ScriptAssemblies\Fluid.BehaviorTree.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
@@ -734,6 +738,9 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluid.BehaviorTree">
+      <HintPath>Library\ScriptAssemblies\Fluid.BehaviorTree.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>

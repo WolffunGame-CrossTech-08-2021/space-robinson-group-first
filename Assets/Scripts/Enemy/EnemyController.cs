@@ -1,71 +1,67 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Rigidbody2D))]
+using CleverCrow.Fluid.BTs.Tasks;
+using CleverCrow.Fluid.BTs.Trees;
+
 public class EnemyController : MonoBehaviour
 {
-    public float HeroDetectRadius = 2f;
-    public float StopDistance = 0.2f;
-    public Transform Target;
-    public float MoveSpeed = 2f;
+    public NavMeshAgent agent;
+    public float scanRadius = 5f;
 
-    private Vector2 _destination;
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private NavMeshAgent _navMeshAgent;
+    private Vector3 _origin;
+    private Vector3 _target;
+    private bool _foundEnemy = false;
 
-    private bool _facingRight = true;
+    [SerializeField]
+    private BehaviorTree _tree;
 
-    private void OnValidate()
+    private void Awake()
     {
-        if (_rigidbody == null)
-            _rigidbody = GetComponent<Rigidbody2D>();
-        if (_navMeshAgent == null)
-            _navMeshAgent = GetComponent<NavMeshAgent>();
+        _origin = transform.position;
+
+        _tree = new BehaviorTreeBuilder(gameObject)
+            .Selector()
+                .Sequence("Attack")
+                    .Condition(() => _foundEnemy)
+                    .Do("Moving To Player", () => {
+                        agent.SetDestination(_target);
+                        return TaskStatus.Success;
+                    })
+                    .Do("Attack To Player", () => {
+                        return TaskStatus.Success;
+                    })
+                .End()
+                .Do("Return To Origin", () => {
+                    agent.SetDestination(_origin);
+                    return TaskStatus.Success;
+                })
+            .End()
+            .Build();
+    }
+
+    private void Update()
+    {
+        _tree.Tick();
     }
 
     private void FixedUpdate()
     {
-        float distance = Vector3.Distance(Target.position, _rigidbody.position);
-        if (distance <= HeroDetectRadius && distance >= StopDistance)
+        Collider2D collision = Physics2D.OverlapCircle(transform.position, scanRadius, LayerMask.GetMask("Player"));
+        if (collision)
         {
-            Move();
+            _foundEnemy = true;
+            _target = collision.transform.position;
         }
-    }
-
-    private void Move()
-    {
-        _destination.x = Target.position.x - _rigidbody.position.x;
-        _destination.y = Target.position.y - _rigidbody.position.y;
-        _rigidbody.MovePosition(_rigidbody.position + _destination * MoveSpeed * Time.fixedDeltaTime);
-
-
-        if (Target.position.x > transform.position.x && !_facingRight)
+        else
         {
-            Flip();
+            _foundEnemy = false;
         }
-        else if (Target.position.x < transform.position.x && _facingRight)
-        {
-            Flip();
-        }
-    }
-
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        _facingRight = !_facingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_rigidbody.position, HeroDetectRadius);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(_rigidbody.position, StopDistance);
+        Gizmos.DrawWireSphere(transform.position, scanRadius);
     }
 }

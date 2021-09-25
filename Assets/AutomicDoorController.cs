@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoDoorController : MonoBehaviour
+public class AutomicDoorController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
@@ -15,6 +15,11 @@ public class AutoDoorController : MonoBehaviour
     {
         if (_animator == null)
             _animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        // xử lý ở đây :v
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,5 +42,11 @@ public class AutoDoorController : MonoBehaviour
             _isDoorOpen = false;
             _doorCloseAt = Time.time;
         }
+    }
+
+
+    public void OnDoorClosed()
+    {
+
     }
 }

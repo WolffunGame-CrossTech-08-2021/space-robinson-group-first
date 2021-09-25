@@ -1,26 +1,41 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroShooting : BaseComponentUpdate
 {
-    public Transform Transform_WeaponAndHands;
+    public GameObject weaponAndHands;
+    public Transform firePoint;
+    public BaseWeaponData weaponData;
 
-    public Transform Player;
-    public Transform FirePoint;
-    public PooledObject BulletPrefab;
-    public float BulletForce = 20f;
-    public float FireRate = 0.1f;
-    public float MissingAngle = 5f;
+    public float cameraShakeDuration = 0.05f;
+    public float cameraShakeStrength = 0.15f;
 
-    [SerializeField] private AudioSource _shootingAudio;
-    private bool _isFire = false;
-    private float _lastFiredTime = 0f;
+    [SerializeField]
+    private AudioSource shootingAudio;
+    private bool isFire = false;
+    private float lastFiredTime = 0f;
 
     private void OnValidate()
     {
-        if (_shootingAudio == null)
-            _shootingAudio = GetComponent<AudioSource>();
+        if (shootingAudio == null)
+            shootingAudio = GetComponent<AudioSource>();
+    }
+
+    private void Awake()
+    {
+        // Add weapon to character
+        Instantiate(weaponData.weaponPrefab, weaponAndHands.transform);
+
+        // Detect firepoint in weapon prefab
+        GameObject firePointObject = GameObject.FindGameObjectWithTag("FirePoint");
+        if (!firePointObject)
+        {
+            Debug.LogError("Can't find fire point in character !");
+            return;
+        }
+        firePoint = GameObject.FindGameObjectWithTag("FirePoint")?.transform;
     }
 
     public override void DoUpdate()
@@ -28,17 +43,20 @@ public class HeroShooting : BaseComponentUpdate
         Turning();
         if (Input.GetButtonDown("Fire1"))
         {
-            _isFire = true;
+            isFire = true;
         }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            _isFire = false;
-        }
+        else
+            isFire = false;
 
-        if (_isFire && _lastFiredTime + FireRate < Time.time)
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    _isFire = false;
+        //}
+
+        if (isFire && lastFiredTime + weaponData.fireRate < Time.time)
         {
-            _lastFiredTime = Time.time;
+            lastFiredTime = Time.time;
             Shoot();
         }
     }
@@ -49,36 +67,37 @@ public class HeroShooting : BaseComponentUpdate
         mousePos.z = 10;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direct = new Vector2(mousePos.x - Transform_WeaponAndHands.position.x, mousePos.y - Transform_WeaponAndHands.position.y);
+        Vector2 direct = new Vector2(mousePos.x - weaponAndHands.transform.position.x, mousePos.y - weaponAndHands.transform.position.y);
         
 
-        if (mousePos.x > Player.position.x + 0.1f)
+        if (mousePos.x > transform.position.x + 0.1f)
         {
-            Transform_WeaponAndHands.right = direct;
+            weaponAndHands.transform.right = direct;
             return;
         }
 
-        if (mousePos.x < Player.position.x - 0.1f)
+        if (mousePos.x < transform.position.x - 0.1f)
         {
-            Transform_WeaponAndHands.right = -direct;
+            weaponAndHands.transform.right = -direct;
             return;
         }
-
     }
 
     private void Shoot()
     {
-        PooledObject bullet = Pool.Instance.Spawn(BulletPrefab, FirePoint.position, FirePoint.rotation * Quaternion.Euler(0, 0, 90));
-        Rigidbody2D rb = bullet.As<Bullet>().Rb2D;
-        float angle = Random.Range(-MissingAngle, MissingAngle);
-        Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * FirePoint.up;
-        rb.AddForce(dir * BulletForce, ForceMode2D.Impulse);
+        weaponData.Fire(firePoint);
+        PlayShootAudio();
+        CameraShakeOnFire();
+    }
 
-        Vector3 eulerAngles = rb.transform.eulerAngles;
-        eulerAngles.z += angle;
-        rb.transform.eulerAngles = eulerAngles;
+    private void PlayShootAudio()
+    {
+        // _shootingAudio.Stop();
+        shootingAudio.Play();
+    }
 
-        _shootingAudio.Stop();
-        _shootingAudio.Play();
+    private void CameraShakeOnFire()
+    {
+        Camera.main.DOShakePosition(cameraShakeDuration, cameraShakeStrength, 10, 90, false);
     }
 }

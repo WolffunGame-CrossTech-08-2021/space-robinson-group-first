@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3719523988331007709}
   - component: {fileID: 7281299192281309660}
-  - component: {fileID: 7079754162678565246}
   m_Layer: 0
   m_Name: Renderer
   m_TagString: Untagged
@@ -83,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7079754162678565246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616469975685486650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737e1a30be55364489fa01dcd3171d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5540670906180867908
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +93,9 @@ GameObject:
   - component: {fileID: 5540670906180867928}
   - component: {fileID: 1780279939}
   - component: {fileID: 1780279942}
+  - component: {fileID: 975150567751146617}
   - component: {fileID: 1780279940}
+  - component: {fileID: 8023959594768389885}
   m_Layer: 9
   m_Name: Monster Cactus Green
   m_TagString: Untagged
@@ -169,7 +158,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -177,6 +166,19 @@ NavMeshAgent:
   m_BaseOffset: 0.53333336
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &975150567751146617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540670906180867908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015e3a797981b2245a03f473f57e3afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 1780279940}
 --- !u!114 &1780279940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,4 +191,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6409fb171f27644bdee8d10d2413f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 1780279942}
+  scanRadius: 10
+  showPath: 1
+--- !u!114 &8023959594768389885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540670906180867908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3208e93167ea2374ab1f9165743224d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100

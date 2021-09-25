@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc37bb1b37c9c1f4587881d1b135badc, type: 3}
+  m_Name: 01_Piston_Default
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 6482402793054869416, guid: 7b13b12529ef30448abad66a21b850f7,
+    type: 3}
+  weaponFireMode: 2
+  bulletPrefab: {fileID: 3237100028772063385, guid: 3dffd7716accdc848bc8fee9345a4e81,
+    type: 3}
+  bulletVelocity: 20
+  numBulletsToFire: 1
+  fireRate: 0.2

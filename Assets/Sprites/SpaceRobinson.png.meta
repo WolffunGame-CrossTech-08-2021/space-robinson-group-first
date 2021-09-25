@@ -62,6 +62,21 @@ TextureImporter:
   - first:
       213: 4387474500206543060
     second: auto_door_05
+  - first:
+      213: 5409622415051634962
+    second: weapon_shotgun_02
+  - first:
+      213: -823931359998547055
+    second: hands_shotgun
+  - first:
+      213: -8798728202327027696
+    second: weapon_shotgun_02
+  - first:
+      213: -3233747131873146445
+    second: bullet_01
+  - first:
+      213: 6674328665306461423
+    second: bullet_02
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -889,6 +904,111 @@ TextureImporter:
       bones: []
       spriteID: 4d045e5efc073ec30800000000000000
       internalID: 4387474500206543060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_shotgun_02
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1161
+        width: 40
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219b422dce6d21b40800000000000000
+      internalID: 5409622415051634962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hands_shotgun
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1562
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b6bff1bcec094f0800000000000000
+      internalID: -823931359998547055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_shotgun_01
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 1174
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01016115153a4e580800000000000000
+      internalID: -8798728202327027696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_01
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2589
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9434fdd1c6f13d0800000000000000
+      internalID: -3233747131873146445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_02
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 2812
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe47cc91f8aff9c50800000000000000
+      internalID: 6674328665306461423
       vertices: []
       indices: 
       edges: []

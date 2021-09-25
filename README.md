@@ -1,8 +1,13 @@
 # Space Robinson Clone
 
+## Let's play
+Web: https://trungkenbi.itch.io/thespaceman
+Android: Coming Soon
+iOS: Coming Soon
+
 ## Members
 - Duong Le Phuoc Trung
-- Do Hoai Nam
+- ~~Do Hoai Nam~~
 
 ## Timeline
 - 04/09/2021: Start project

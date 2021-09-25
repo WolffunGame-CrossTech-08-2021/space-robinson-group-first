@@ -4,7 +4,7 @@ using UnityEngine.AI;
 using CleverCrow.Fluid.BTs.Tasks;
 using CleverCrow.Fluid.BTs.Trees;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : BaseMonoBehaviour
 {
     public NavMeshAgent agent;
     public float scanRadius = 5f;
@@ -12,23 +12,23 @@ public class EnemyMovement : MonoBehaviour
 
     public bool showPath;
 
-    private Vector3 _origin;
-    private Vector3 _target;
-    private bool _foundEnemy = false;
+    private Vector3 origin;
+    private Vector3 target;
+    private bool foundEnemy = false;
 
     [SerializeField]
     private BehaviorTree _tree;
 
     private void Awake()
     {
-        _origin = transform.position;
+        origin = transform.position;
 
         _tree = new BehaviorTreeBuilder(gameObject)
             .Selector()
                 .Sequence("Attack")
-                    .Condition(() => _foundEnemy)
+                    .Condition(() => foundEnemy)
                     .Do("Moving To Player", () => {
-                        agent.SetDestination(_target);
+                        agent.SetDestination(target);
                         return TaskStatus.Success;
                     })
                     .Do("Attack To Player", () => {
@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
                     })
                 .End()
                 .Do("Return To Origin", () => {
-                    agent.SetDestination(_origin);
+                    agent.SetDestination(origin);
                     return TaskStatus.Success;
                 })
             .End()
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    private void Update()
+    public override void DoUpdate()
     {
         if (!isRunning)
             return;
@@ -64,12 +64,12 @@ public class EnemyMovement : MonoBehaviour
         Collider2D collision = Physics2D.OverlapCircle(transform.position, scanRadius, LayerMask.GetMask("Player"));
         if (collision)
         {
-            _foundEnemy = true;
-            _target = collision.transform.position;
+            foundEnemy = true;
+            target = collision.transform.position;
         }
         else
         {
-            _foundEnemy = false;
+            foundEnemy = false;
         }
     }
 

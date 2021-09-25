@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HeroMovement : BaseComponentUpdate
+public class HeroMovement : BaseMonoBehaviour
 {
     public float moveSpeed = 5f;
     public Camera cam;

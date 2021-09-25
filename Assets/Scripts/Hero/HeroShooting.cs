@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroShooting : BaseComponentUpdate
+public class HeroShooting : BaseMonoBehaviour
 {
     public GameObject weaponAndHands;
     public Transform firePoint;
@@ -14,8 +14,8 @@ public class HeroShooting : BaseComponentUpdate
 
     [SerializeField]
     private AudioSource shootingAudio;
-    private bool isFire = false;
-    private float lastFiredTime = 0f;
+
+    private float interval = 0f;
 
     private void OnValidate()
     {
@@ -25,6 +25,17 @@ public class HeroShooting : BaseComponentUpdate
 
     private void Awake()
     {
+        InitWeapon();
+    }
+
+    public void InitWeapon()
+    {
+        // Remove all child gameObject in weaponAndHands
+        foreach (Transform child in weaponAndHands.transform)
+        {
+            DestroyImmediate(child.gameObject);
+        }
+
         // Add weapon to character
         Instantiate(weaponData.weaponPrefab, weaponAndHands.transform);
 
@@ -41,23 +52,17 @@ public class HeroShooting : BaseComponentUpdate
     public override void DoUpdate()
     {
         Turning();
-        if (Input.GetButtonDown("Fire1"))
+
+        if (interval > 0f)
         {
-            isFire = true;
+            interval -= Time.deltaTime;
+            return;
         }
 
-        else
-            isFire = false;
-
-        //if (Input.GetButtonUp("Fire1"))
-        //{
-        //    _isFire = false;
-        //}
-
-        if (isFire && lastFiredTime + weaponData.fireRate < Time.time)
+        if (Input.GetButtonDown("Fire1"))
         {
-            lastFiredTime = Time.time;
             Shoot();
+            interval = weaponData.fireRate;
         }
     }
 

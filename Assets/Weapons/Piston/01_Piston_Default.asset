@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6482402793054869416, guid: 7b13b12529ef30448abad66a21b850f7,
     type: 3}
   weaponFireMode: 2
-  bulletPrefab: {fileID: 3237100028772063385, guid: 3dffd7716accdc848bc8fee9345a4e81,
+  bulletPrefab: {fileID: 3237100028772063385, guid: b1e4a43106e2a304e9a826aec11e7d73,
     type: 3}
   bulletVelocity: 20
   numBulletsToFire: 1

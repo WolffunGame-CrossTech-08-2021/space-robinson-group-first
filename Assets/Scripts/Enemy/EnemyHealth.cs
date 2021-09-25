@@ -1,37 +1,37 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : BaseMonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
 
-    private bool _isDeath = false;
-    private float _currentHealth;
+    private float currentHealth;
 
     private void Awake()
     {
-        _currentHealth = maxHealth;
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        float newHealth = _currentHealth - damage;
+        float newHealth = currentHealth - damage;
         if (newHealth <= 0)
         {
-            // var enemyEntity = gameObject.GetComponent<EnemyEntity>();
-            _currentHealth = 0;
-            _isDeath = true;
-            // enemyEntity.movement.isRunning = false;
+            currentHealth = 0;
             gameObject.SetActive(false);
             return;
         }
 
         if (newHealth > maxHealth)
         {
-            _currentHealth = maxHealth;
+            currentHealth = maxHealth;
             return;
         }
 
-        _currentHealth = newHealth;
+        currentHealth = newHealth;
+    }
+
+    public override void DoUpdate()
+    {
     }
 }

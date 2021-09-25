@@ -18,15 +18,20 @@ public class Bullet : MonoBehaviour
         _pooledObject = GetComponent<PooledObject>();
     }
 
+    public virtual void Setup()
+    {
+        // Cài đặt hướng bay của viên đạn, ...
+        // Vị trí xuất phát, hướng bay
+        // 
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log(collision.gameObject.name);
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             EnemyEntity enemyEntity = collision.gameObject.GetComponent<EnemyEntity>();
-            enemyEntity.health.TakeDamage(damage);
+            enemyEntity.OnTakeDamage?.Invoke(damage);
         }
-
 
         PooledObject effect = Pool.Instance.Spawn(HitEffect, transform.position, Quaternion.identity);
 

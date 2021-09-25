@@ -26,7 +26,7 @@ public class AutomicDoorController : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !_isDoorOpen && _doorOpenAt + 0.5f < Time.time)
         {
-            Debug.Log("Open the door !");
+            // Debug.Log("Open the door !");
             _animator.SetBool("OnSensor", true);
             _isDoorOpen = true;
             _doorOpenAt = Time.time;
@@ -37,7 +37,7 @@ public class AutomicDoorController : MonoBehaviour
     {
         if (collision.CompareTag("Player") && _isDoorOpen && _doorCloseAt + 0.5f < Time.time)
         {
-            Debug.Log("Close the door !");
+            // Debug.Log("Close the door !");
             _animator.SetBool("OnSensor", false);
             _isDoorOpen = false;
             _doorCloseAt = Time.time;

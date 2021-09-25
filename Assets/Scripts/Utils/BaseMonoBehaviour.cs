@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-public abstract class BaseComponentUpdate : MonoBehaviour
+public abstract class BaseMonoBehaviour : MonoBehaviour
 {
     public abstract void DoUpdate();
 }

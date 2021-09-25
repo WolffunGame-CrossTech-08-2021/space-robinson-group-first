@@ -5425,6 +5425,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1534956076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534956078}
+  - component: {fileID: 1534956077}
+  m_Layer: 0
+  m_Name: WeaponManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1534956077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534956076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3b640b5fbc27145b6ad60b1dfc3b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroShooting: {fileID: 1832136383}
+  weapons:
+  - {fileID: 11400000, guid: 7f8c05124cd85284abc016bb777af1ff, type: 2}
+  - {fileID: 11400000, guid: 1bad1adaa92c68c43ab623e88ee9dc16, type: 2}
+--- !u!4 &1534956078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534956076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618158731
 GameObject:
   m_ObjectHideFlags: 0
@@ -5647,8 +5694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAndHands: {fileID: 680769171}
   firePoint: {fileID: 0}
-  weaponData: {fileID: 11400000, guid: 1bad1adaa92c68c43ab623e88ee9dc16, type: 2}
-  fireRateTmp: 0.5
+  weaponData: {fileID: 11400000, guid: 7f8c05124cd85284abc016bb777af1ff, type: 2}
   cameraShakeDuration: 0.05
   cameraShakeStrength: 0.15
   shootingAudio: {fileID: 1832136390}
@@ -5742,7 +5788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c282b70482de542aef5f0fd1bb9acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ComponentUpdates:
+  behaviours:
   - {fileID: 1832136389}
   - {fileID: 1832136383}
 --- !u!114 &1832136389

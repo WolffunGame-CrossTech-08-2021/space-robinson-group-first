@@ -16,7 +16,7 @@ public class AgentEntity : MonoBehaviour
     {
         behaviours = GetComponentsInChildren<BaseMonoBehaviour>();
     }
-    
+
     protected void OnAwake() {}
 
     private void Awake()

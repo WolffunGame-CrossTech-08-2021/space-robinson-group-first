@@ -77,6 +77,12 @@ TextureImporter:
   - first:
       213: 6674328665306461423
     second: bullet_02
+  - first:
+      213: -425265156163451344
+    second: weapon_rifle_02
+  - first:
+      213: 1709331188838283386
+    second: bullet_green_01
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1001,7 +1007,7 @@ TextureImporter:
         width: 10
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1009,6 +1015,48 @@ TextureImporter:
       bones: []
       spriteID: fe47cc91f8aff9c50800000000000000
       internalID: 6674328665306461423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_rifle_02
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 1177
+        width: 39
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036c687f797291af0800000000000000
+      internalID: -425265156163451344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_green_01
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 2206
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78b33ae8a3c8b710800000000000000
+      internalID: 1709331188838283386
       vertices: []
       indices: 
       edges: []

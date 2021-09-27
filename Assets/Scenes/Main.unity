@@ -4624,7 +4624,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4640,25 +4639,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!95 &519420030
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a63b52aeb7548a42a27b30327cd9ced, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4691,7 +4671,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -5458,6 +5438,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 7f8c05124cd85284abc016bb777af1ff, type: 2}
   - {fileID: 11400000, guid: 1bad1adaa92c68c43ab623e88ee9dc16, type: 2}
+  - {fileID: 11400000, guid: 51722c8ae4fe9654696cb6f5760807ca, type: 2}
 --- !u!4 &1534956078
 Transform:
   m_ObjectHideFlags: 0
@@ -21360,6 +21341,9 @@ MonoBehaviour:
       type: 3}
   - amount: 20
     objectToPool: {fileID: 3237100028772063385, guid: 3dffd7716accdc848bc8fee9345a4e81,
+      type: 3}
+  - amount: 20
+    objectToPool: {fileID: 3237100028772063385, guid: d3d0761d8f2c63941ac52de5b4438601,
       type: 3}
 --- !u!4 &2071664690
 Transform:

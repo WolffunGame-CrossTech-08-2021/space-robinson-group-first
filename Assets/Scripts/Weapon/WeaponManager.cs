@@ -10,9 +10,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField]
     private List<BaseWeaponData> weapons;
 
-    private int currentWeaponIndex = 0;
-
-    // Update is called once per frame
+    private int _currentWeaponIndex = 0;
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -21,8 +20,8 @@ public class WeaponManager : MonoBehaviour
 
     private void ChangeWeapon()
     {
-        heroShooting.weaponData = weapons[(currentWeaponIndex + 1) % weapons.Count];
+        heroShooting.weaponData = weapons[(_currentWeaponIndex + 1) % weapons.Count];
         heroShooting.InitWeapon();
-        currentWeaponIndex++;
+        _currentWeaponIndex++;
     }
 }

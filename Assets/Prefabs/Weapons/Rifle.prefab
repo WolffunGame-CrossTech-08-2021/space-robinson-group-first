@@ -39,9 +39,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1750321677675474934}
-  - component: {fileID: 1708927648961994479}
+  - component: {fileID: -7128106949185292258}
   m_Layer: 8
-  m_Name: Shotgun
+  m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1708927648961994479
+--- !u!114 &-7128106949185292258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,10 +72,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750321677675474929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9bafbe81d3435b926ff7ee0a0379d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 79e9274c45e84bbaa7b4664be0785180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 1bad1adaa92c68c43ab623e88ee9dc16, type: 2}
+  weaponData: {fileID: 11400000, guid: 51722c8ae4fe9654696cb6f5760807ca, type: 2}
   firePoint: {fileID: 1750321677641958943}
 --- !u!1 &1750321677715140286
 GameObject:
@@ -261,7 +261,7 @@ SpriteRenderer:
   m_SortingLayerID: -637924129
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3739441953805767989, guid: e94a4e76a3600bc4cbb0d19d0dc142da,
+  m_Sprite: {fileID: -425265156163451344, guid: e94a4e76a3600bc4cbb0d19d0dc142da,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

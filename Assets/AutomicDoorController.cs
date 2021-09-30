@@ -1,21 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AutomicDoorController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    private float _doorCloseAt;
 
-    private bool _isDoorOpen = false;
+    private float _doorOpenAt;
 
-    private float _doorOpenAt = 0f;
-    private float _doorCloseAt = 0f;
-
-    private void OnValidate()
-    {
-        if (_animator == null)
-            _animator = GetComponent<Animator>();
-    }
+    private bool _isDoorOpen;
 
     private void Update()
     {
@@ -44,9 +36,14 @@ public class AutomicDoorController : MonoBehaviour
         }
     }
 
+    private void OnValidate()
+    {
+        if (_animator == null)
+            _animator = GetComponent<Animator>();
+    }
+
 
     public void OnDoorClosed()
     {
-
     }
 }

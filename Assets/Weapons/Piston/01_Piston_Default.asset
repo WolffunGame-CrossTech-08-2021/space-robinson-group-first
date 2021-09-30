@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 6482402793054869416, guid: 7b13b12529ef30448abad66a21b850f7,
     type: 3}
-  weaponFireMode: 2
   bulletPrefab: {fileID: 3237100028772063385, guid: b1e4a43106e2a304e9a826aec11e7d73,
     type: 3}
   bulletVelocity: 20
   numBulletsToFire: 1
   fireRate: 0.2
+  reloadTime: 1
+  cartridgeCapacity: 10
+  maxBullets: 30
+  fireAudio: {fileID: 8300000, guid: 43cf928040aee7f4ab9a30dec0e683b9, type: 3}
+  fireReloadAudio: {fileID: 8300000, guid: d546e0cf2e0725048b9e375add6ea306, type: 3}

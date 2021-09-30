@@ -1,21 +1,23 @@
-﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroShooting : BaseMonoBehaviour
 {
     public GameObject weaponAndHands;
-    public Transform firePoint;
     public BaseWeaponData weaponData;
 
     public float cameraShakeDuration = 0.05f;
     public float cameraShakeStrength = 0.15f;
 
+    public Text txtCurrentBulletsCount;
+
     [SerializeField]
     private AudioSource shootingAudio;
 
-    private float _interval;
+    public int totalBulletsCount;
+    public int currentBulletsCount;
 
     private void OnValidate()
     {
@@ -38,6 +40,36 @@ public class HeroShooting : BaseMonoBehaviour
 
         // Add weapon to character
         Instantiate(weaponData.weaponPrefab, weaponAndHands.transform);
+        
+        // Change fire audio clip
+        shootingAudio.clip = weaponData.fireAudio;
+        
+        // UI
+        totalBulletsCount = weaponData.maxBullets;
+        RechargeBullet();
+    }
+
+    public IEnumerator RechargeBulletAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        shootingAudio.clip = weaponData.fireReloadAudio;
+        shootingAudio.Play();
+
+        yield return new WaitForSeconds(weaponData.reloadTime);
+        shootingAudio.clip = weaponData.fireAudio;
+        RechargeBullet();
+    } 
+
+    public void RechargeBullet()
+    {
+        currentBulletsCount = weaponData.cartridgeCapacity % weaponData.maxBullets;
+        totalBulletsCount -= currentBulletsCount;
+        SetBulletCount();
+    }
+
+    public void SetBulletCount()
+    {
+        txtCurrentBulletsCount.text = $"Bullets: {currentBulletsCount} ({totalBulletsCount})";
     }
 
     public override void DoUpdate()
@@ -65,13 +97,6 @@ public class HeroShooting : BaseMonoBehaviour
             weaponAndHands.transform.right = -direct;
             return;
         }
-    }
-
-    private void Shoot()
-    {
-        weaponData.Fire(firePoint);
-        PlayShootAudio();
-        CameraShakeOnFire();
     }
 
     public void PlayShootAudio()

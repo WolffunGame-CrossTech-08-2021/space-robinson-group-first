@@ -20,10 +20,11 @@ public class RifleWeapon : BaseWeapon
 
         if (isFire)
         {
-            weaponData.Fire(firePoint);
-            interval = weaponData.fireRate;
-            
-            OnFired?.Invoke();
+            if (Firing())
+            {
+                interval = weaponData.fireRate;
+                OnFired?.Invoke();
+            }
         }
     }
 }

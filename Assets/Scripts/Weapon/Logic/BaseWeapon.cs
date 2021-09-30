@@ -10,6 +10,8 @@ public abstract class BaseWeapon : MonoBehaviour
     public Transform firePoint;
     
     public Action OnFired;
+
+    public Action OnNotEnoughBullet;
     
     private HeroShooting shooting;
     
@@ -23,6 +25,9 @@ public abstract class BaseWeapon : MonoBehaviour
             OnFired += shooting.PlayShootAudio;
             OnFired += shooting.CameraShakeOnFire;
         }
+
+        if (OnNotEnoughBullet == null)
+            OnNotEnoughBullet += RechargeBullet;
     }
 
     void Update()
@@ -35,10 +40,36 @@ public abstract class BaseWeapon : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            if (Firing())
+            {
+                interval = weaponData.fireRate;
+                OnFired?.Invoke();
+            }
+        }
+    }
+
+    protected bool Firing()
+    {
+        if (shooting.currentBulletsCount >= weaponData.numBulletsToFire)
+        {
+            shooting.currentBulletsCount -= weaponData.numBulletsToFire;
+            shooting.SetBulletCount();
             weaponData.Fire(firePoint);
-            interval = weaponData.fireRate;
             
-            OnFired?.Invoke();
+            if (shooting.currentBulletsCount == 0)
+                OnNotEnoughBullet.Invoke();
+            
+            return true;
+        }
+
+        return false;
+    }
+
+    public void RechargeBullet()
+    {
+        if (shooting.totalBulletsCount > 0)
+        {
+            StartCoroutine(shooting.RechargeBulletAnimation());
         }
     }
 }

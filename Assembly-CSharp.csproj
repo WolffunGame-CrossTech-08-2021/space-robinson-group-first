@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Utils\BaseMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\Utils\PixelPerfect.cs" />
      <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Utils\SpriteSorter.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\BaseWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\PistonWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\RifleWeaponData.cs" />
@@ -176,6 +177,9 @@
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="NavMeshComponents">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/NavMeshComponents.dll</HintPath>
  </Reference>
@@ -199,6 +203,9 @@
  </Reference>
  <Reference Include="Unity.2D.Common.Runtime">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -232,12 +239,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.30f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

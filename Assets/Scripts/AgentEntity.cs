@@ -12,14 +12,12 @@ public class AgentEntity : MonoBehaviour
 
     public Action OnDead;
 
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
         behaviours = GetComponentsInChildren<BaseMonoBehaviour>();
     }
 
-    protected void OnAwake() {}
-
-    private void Awake()
+    protected virtual void Awake()
     {
         // Setup event
         for(int i = 0; i < behaviours.Length; i++)
@@ -29,9 +27,6 @@ public class AgentEntity : MonoBehaviour
                 OnTakeDamage += healthBehaviour.TakeDamage;
             }
         }
-
-        // Call awake
-        OnAwake();
     }
 
     private void Update()

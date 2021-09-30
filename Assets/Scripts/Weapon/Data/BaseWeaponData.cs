@@ -3,19 +3,16 @@ using UnityEngine;
 
 public abstract class BaseWeaponData : ScriptableObject
 {
-    public enum WeaponFireMode {
-        AUTO,
-        SEMIAUTO,
-        BURST,
-        STAGGERED
-    };
-
     public GameObject weaponPrefab;
-    public WeaponFireMode weaponFireMode;
     public PooledObject bulletPrefab;
     public float bulletVelocity = 10f;
     public int numBulletsToFire = 1;
     public float fireRate = 0.1f;
+    public float reloadTime = 1f;
+    public int cartridgeCapacity = 10;
+    public int maxBullets = 30;
+    public AudioClip fireAudio;
+    public AudioClip fireReloadAudio;
 
     public abstract void Fire(Transform firePoint);
 

@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   bulletPrefab: {fileID: 3237100028772063385, guid: 3dffd7716accdc848bc8fee9345a4e81,
     type: 3}
-  bulletVelocity: 30
+  bulletSpeed: 35
   numBulletsToFire: 5
   fireRate: 0.5
   reloadTime: 1

@@ -1,8 +1,39 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class InputManager : Singleton<InputManager>
+namespace Manager
 {
-    // Xử lý các nút nhấn như W A S D, chuột trái, chuột phải, ...
-    // nhưng lại chưa biết làm sao, tại sao phải làm cái này thay vì xài cái có sẵn của Unity :3
+    public class InputManager : Singleton<InputManager>
+    {
+        public Joystick joystick;
+        public ButtonHandler buttonFire;
+    
+        public static float MoveHorizontal;
+        public static float MoveVertical;
+
+        public static bool IsPressFire;
+
+        private void Start()
+        {
+#if !(UNITY_ANDROID || UNITY_IOS)
+            Destroy(joystick.gameObject);
+            Destroy(buttonFire.gameObject);
+#else
+            joystick.gameObject.SetActive(true);
+            buttonFire.gameObject.SetActive(true);
+#endif
+        }
+
+        private void Update()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+        MoveHorizontal = joystick.Horizontal;
+        MoveVertical = joystick.Vertical;
+        IsPressFire = buttonFire.IsPressed;
+#else
+            MoveHorizontal = Input.GetAxis("Horizontal");
+            MoveVertical = Input.GetAxis("Vertical");
+            IsPressFire = Input.GetButtonDown("Fire1");
+#endif
+        }
+    }
 }

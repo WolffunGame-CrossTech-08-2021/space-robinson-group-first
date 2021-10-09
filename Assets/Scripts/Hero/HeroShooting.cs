@@ -2,6 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using Weapon.Data;
 
 public class HeroShooting : BaseMonoBehaviour
 {

@@ -1,4 +1,7 @@
-﻿public class PistonWeapon : BaseWeapon
+﻿namespace Weapon.Logic
 {
+    public class PistonWeapon : BaseWeapon
+    {
     
+    }
 }

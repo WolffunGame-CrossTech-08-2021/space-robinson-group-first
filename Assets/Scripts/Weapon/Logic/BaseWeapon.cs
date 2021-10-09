@@ -1,75 +1,82 @@
 ﻿using System;
-using System.Collections;
+using Manager;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
+using Weapon.Data;
 
-public abstract class BaseWeapon : MonoBehaviour
+namespace Weapon.Logic
 {
-    public BaseWeaponData weaponData;
-    public Transform firePoint;
-    
-    public Action OnFired;
-
-    public Action OnNotEnoughBullet;
-    
-    private HeroShooting shooting;
-    
-    protected float interval;
-
-    private void Awake()
+    public abstract class BaseWeapon : MonoBehaviour
     {
-        shooting = GetComponentInParent<HeroShooting>();
-        if (OnFired == null)
+        public BaseWeaponData weaponData;
+        [HideInInspector]
+        public Transform firePoint;
+
+        public Action OnFired;
+        public Action OnNotEnoughBullet;
+
+        private HeroShooting shooting;
+        protected float interval;
+
+        private void OnValidate()
         {
-            OnFired += shooting.PlayShootAudio;
-            OnFired += shooting.CameraShakeOnFire;
+            if (firePoint == null)
+                firePoint = transform.Find("FirePoint");
         }
 
-        if (OnNotEnoughBullet == null)
-            OnNotEnoughBullet += RechargeBullet;
-    }
-
-    void Update()
-    {
-        if (interval > 0f)
+        private void Awake()
         {
-            interval -= Time.deltaTime;
-            return;
-        }
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (Firing())
+            shooting = GetComponentInParent<HeroShooting>();
+            if (OnFired == null)
             {
-                interval = weaponData.fireRate;
-                OnFired?.Invoke();
+                OnFired += shooting.PlayShootAudio;
+                OnFired += shooting.CameraShakeOnFire;
+            }
+
+            if (OnNotEnoughBullet == null)
+                OnNotEnoughBullet += RechargeBullet;
+        }
+
+        void Update()
+        {
+            if (interval > 0f)
+            {
+                interval -= Time.deltaTime;
+                return;
+            }
+
+            if (InputManager.IsPressFire)
+            {
+                if (Firing())
+                {
+                    interval = weaponData.fireRate;
+                    OnFired?.Invoke();
+                }
             }
         }
-    }
 
-    protected bool Firing()
-    {
-        if (shooting.currentBulletsCount >= weaponData.numBulletsToFire)
+        protected bool Firing()
         {
-            shooting.currentBulletsCount -= weaponData.numBulletsToFire;
-            shooting.SetBulletCount();
-            weaponData.Fire(firePoint);
-            
-            if (shooting.currentBulletsCount == 0)
-                OnNotEnoughBullet.Invoke();
-            
-            return true;
+            if (shooting.currentBulletsCount >= weaponData.numBulletsToFire)
+            {
+                shooting.currentBulletsCount -= weaponData.numBulletsToFire;
+                shooting.SetBulletCount();
+                weaponData.Fire(firePoint);
+
+                if (shooting.currentBulletsCount == 0)
+                    OnNotEnoughBullet.Invoke();
+
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
-    }
-
-    public void RechargeBullet()
-    {
-        if (shooting.totalBulletsCount > 0)
+        public void RechargeBullet()
         {
-            StartCoroutine(shooting.RechargeBulletAnimation());
+            if (shooting.totalBulletsCount > 0)
+            {
+                StartCoroutine(shooting.RechargeBulletAnimation());
+            }
         }
     }
 }

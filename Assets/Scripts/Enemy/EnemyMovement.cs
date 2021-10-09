@@ -2,12 +2,19 @@
 using UnityEngine.AI;
 using CleverCrow.Fluid.BTs.Tasks;
 using CleverCrow.Fluid.BTs.Trees;
+using ObjectPooling;
 
 public class EnemyMovement : BaseMonoBehaviour
 {
     public NavMeshAgent agent;
     public float scanRadius = 5f;
     public bool isRunning = true;
+    
+    public bool isBoss = false;
+    public PooledObject bossBullet;
+    public int boosShotAngle;
+    public float bulletSpeed = 10f;
+    
 
     public bool showPath;
 
@@ -17,6 +24,8 @@ public class EnemyMovement : BaseMonoBehaviour
     private bool wandering = true;
 
     [SerializeField] private BehaviorTree _tree;
+
+    private float _interval;
 
     private void Awake()
     {
@@ -31,7 +40,11 @@ public class EnemyMovement : BaseMonoBehaviour
                 agent.SetDestination(target);
                 return TaskStatus.Success;
             })
-            .Do("Attack To Player", () => { return TaskStatus.Success; })
+            .Do("Attack To Player", () =>
+            {
+                BossAttack();
+                return TaskStatus.Success;
+            })
             .End()
             .Do("Return To Origin", () =>
             {
@@ -69,6 +82,48 @@ public class EnemyMovement : BaseMonoBehaviour
         else
         {
             foundEnemy = false;
+        }
+    }
+
+    private void Attack()
+    {
+        
+    }
+    
+    private void BossAttack()
+    {
+        if (!isBoss)
+            return;
+        
+        if (_interval > 0f)
+        {
+            _interval -= Time.deltaTime;
+            return;
+        }
+
+        float distance = Vector3.Distance(transform.position, target);
+        if (distance <= 9f)
+        {
+            _interval = 0.1f;
+
+            var position = transform.position;
+            var bullet = Pool.Instance.Spawn(bossBullet, position, Quaternion.identity);
+            var rb = bullet.GetComponent<Rigidbody2D>();
+            
+            // Rotation velocity of bullet
+            Vector3 direction = (Quaternion.AngleAxis(boosShotAngle, Vector3.forward) * position).normalized;
+
+            rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
+
+            // Rotation bullet
+            var transform1 = rb.transform;
+            Vector3 eulerAngles = transform1.eulerAngles;
+            eulerAngles.z += boosShotAngle;
+            transform1.eulerAngles = eulerAngles;
+
+            boosShotAngle = (boosShotAngle + 10) % 360;
+
+            bullet.FinishDelayed(10f);
         }
     }
 

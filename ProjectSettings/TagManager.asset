@@ -18,8 +18,8 @@ TagManager:
   - Enemy
   - Bullet
   - Decorative
-  - 
-  - 
+  - BossBullet
+  - Wall
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3795272889
+    locked: 0
+  - name: BackgroundDeco
+    uniqueID: 1582522229
     locked: 0
   - name: Middle
     uniqueID: 1742634141

@@ -1,32 +1,22 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Weapons/Shotgun")]
-public class ShotgunWeaponData : BaseWeaponData
+namespace Weapon.Data
 {
-    private const int ANGLE_CONE = 7;
-
-    public override void Fire(Transform firePoint)
+    [CreateAssetMenu(menuName = "Weapons/Shotgun")]
+    public class ShotgunWeaponData : BaseWeaponData
     {
-        float mostRightAngle = ANGLE_CONE * (numBulletsToFire / 2);
+        private const int AngleCone = 7;
 
-        for (int i = 0; i < numBulletsToFire; i++)
+        public override void Fire(Transform firePoint)
         {
-            float angle = Random.Range(-mostRightAngle, mostRightAngle);
-            PooledObject bullet = GetBulletToFire(firePoint);
-            RotationBullet(ref bullet, firePoint, angle);
-            BackBulletToPool(ref bullet);
-        }
-    }
+            int mostRightAngle = AngleCone * (numBulletsToFire / 2);
 
-    public void Fire2(Transform firePoint)
-    {
-        float mostRightAngle = ANGLE_CONE * (numBulletsToFire / 2);
-        for (float angle = -mostRightAngle; angle <= mostRightAngle; angle += ANGLE_CONE)
-        {
-            PooledObject bullet = GetBulletToFire(firePoint);
-            RotationBullet(ref bullet, firePoint, angle);
-            BackBulletToPool(ref bullet);
+            for (int i = 0; i < numBulletsToFire; i++)
+            {
+                float angle = Random.Range(-mostRightAngle, mostRightAngle);
+                var bullet = GetBulletToFire(firePoint, angle);
+                BackBulletToPool(ref bullet);
+            }
         }
     }
 }

@@ -2,47 +2,50 @@
 using System.Collections;
 using UnityEngine;
 
-public class PooledObject : MonoBehaviour
+namespace ObjectPooling
 {
-    [HideInInspector]
-    public int id;
-    public Action<PooledObject> Finished;
-
-    // A component reference for fast access -- avoids calls to GetComponent<>().
-    public Component behaviour;
-
-    public T As<T>() where T : Component
+    public class PooledObject : MonoBehaviour
     {
-        return behaviour as T;
-    }
+        [HideInInspector]
+        public int id;
+        public Action<PooledObject> Finished;
 
-    public void Finish()
-    {
-        if (Finished != null)
+        // A component reference for fast access -- avoids calls to GetComponent<>().
+        public Component behaviour;
+
+        public T As<T>() where T : Component
         {
-            Finished(this);
+            return behaviour as T;
         }
-    }
 
-    public void FinishDelayed(float time)
-    {
-        if (Finished != null)
+        public void Finish()
         {
-            StartCoroutine(FinishDelayedCoroutine(time));
+            if (Finished != null)
+            {
+                Finished(this);
+            }
         }
-    }
 
-    private IEnumerator FinishDelayedCoroutine(float time)
-    {
-        yield return new WaitForSeconds(time);
-        if (Finished != null)
-            Finished(this);
-    }
+        public void FinishDelayed(float time)
+        {
+            if (Finished != null)
+            {
+                StartCoroutine(FinishDelayedCoroutine(time));
+            }
+        }
 
-    // Convenience method to call finish when particles finish.
-    // Needs ParticleSystem stop action to be set to "Callback".
-    private void OnParticleSystemStopped()
-    {
-        Finish();
+        private IEnumerator FinishDelayedCoroutine(float time)
+        {
+            yield return new WaitForSeconds(time);
+            if (Finished != null)
+                Finished(this);
+        }
+
+        // Convenience method to call finish when particles finish.
+        // Needs ParticleSystem stop action to be set to "Callback".
+        private void OnParticleSystemStopped()
+        {
+            Finish();
+        }
     }
 }

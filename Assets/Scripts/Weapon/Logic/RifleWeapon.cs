@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 
-public class RifleWeapon : BaseWeapon
+namespace Weapon.Logic
 {
-    private bool isFire;
-    
-    void Update()
+    public class RifleWeapon : BaseWeapon
     {
-        if (Input.GetButtonUp("Fire1"))
-            isFire = false;
-
-        if (interval > 0f)
+        private bool _isFire;
+    
+        void Update()
         {
-            interval -= Time.deltaTime;
-            return;
-        }
+            if (Input.GetButtonUp("Fire1"))
+                _isFire = false;
 
-        if (Input.GetButtonDown("Fire1"))
-            isFire = true;
-
-        if (isFire)
-        {
-            if (Firing())
+            if (interval > 0f)
             {
-                interval = weaponData.fireRate;
-                OnFired?.Invoke();
+                interval -= Time.deltaTime;
+                return;
+            }
+
+            if (Input.GetButtonDown("Fire1"))
+                _isFire = true;
+
+            if (_isFire)
+            {
+                if (Firing())
+                {
+                    interval = weaponData.fireRate;
+                    OnFired?.Invoke();
+                }
             }
         }
     }

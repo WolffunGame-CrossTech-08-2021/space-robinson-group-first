@@ -1,27 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using Weapon.Data;
 
-public class WeaponManager : MonoBehaviour
+namespace Weapon
 {
-    [SerializeField]
-    private HeroShooting heroShooting;
+    public class WeaponManager : MonoBehaviour
+    {
+        [SerializeField]
+        private HeroShooting heroShooting;
 
-    [SerializeField]
-    private List<BaseWeaponData> weapons;
+        [SerializeField]
+        private List<BaseWeaponData> weapons;
 
-    private int _currentWeaponIndex = 0;
+        private int _currentWeaponIndex = 0;
     
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            ChangeWeapon();
-    }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+                ChangeWeapon();
+        }
 
-    private void ChangeWeapon()
-    {
-        heroShooting.weaponData = weapons[(_currentWeaponIndex + 1) % weapons.Count];
-        heroShooting.InitWeapon();
-        _currentWeaponIndex++;
+        private void ChangeWeapon()
+        {
+            heroShooting.weaponData = weapons[(_currentWeaponIndex + 1) % weapons.Count];
+            heroShooting.InitWeapon();
+            _currentWeaponIndex++;
+        }
     }
 }

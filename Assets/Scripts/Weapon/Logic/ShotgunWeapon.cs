@@ -1,4 +1,7 @@
-﻿public class ShotgunWeapon : BaseWeapon
+﻿namespace Weapon.Logic
 {
+    public class ShotgunWeapon : BaseWeapon
+    {
         
+    }
 }

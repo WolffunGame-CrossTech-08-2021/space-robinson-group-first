@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Manager;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,6 +11,8 @@ public class HeroMovement : BaseMonoBehaviour
     private Vector2 movement;
     private Vector2 mousePos;
 
+    public int numTests = 10000000;
+
     private bool _facingRight = true;
 
     private void Awake()
@@ -21,12 +22,32 @@ public class HeroMovement : BaseMonoBehaviour
 
     public override void DoUpdate()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.x = InputManager.MoveHorizontal;
+        movement.y = InputManager.MoveVertical;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         Move();
+
+
+        // Profiler.BeginSample("Normal Transform");
+        // for (int i = 0; i < numTests; i++)
+        // {
+        //     
+        //     var ts = transform;
+        //     
+        // }
+        // Profiler.EndSample();
+        //
+        //
+        // Profiler.BeginSample("Var Transform");
+        // var ts2 = transform;
+        //
+        // for (int i = 0; i < numTests; i++)
+        // {
+        //     var tss = ts2;
+        // }
+        // Profiler.EndSample();
     }
 
     private void FixedUpdate()

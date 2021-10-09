@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : BaseMonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
+    public Image healthBar;
 
     private float _currentHealth;
 
@@ -29,6 +31,11 @@ public class EnemyHealth : BaseMonoBehaviour, IDamageable
         }
 
         _currentHealth = newHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = _currentHealth / maxHealth;
+        }
     }
 
     public override void DoUpdate()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750321677641958943}
   m_Layer: 8
-  m_Name: FireTransform
+  m_Name: FirePoint
   m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,11 +23,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750321677641958942}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.02, y: 0.05, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.3199999, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1750321677753324779}
+  m_Father: {fileID: 1750321677675474934}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1750321677675474929
@@ -59,7 +59,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1750321677753324779}
-  - {fileID: 1750321677715140287}
+  - {fileID: 1750321677641958943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,10 +102,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750321677715140286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.423, y: -0.354, z: 0}
+  m_LocalPosition: {x: 0.123000026, y: -0.14400001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1750321677675474934}
+  m_Father: {fileID: 1750321677753324779}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1750321677715140284
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750321677753324779}
   m_Layer: 8
-  m_Name: Weapon
+  m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1750321678426796149}
-  - {fileID: 1750321677641958943}
+  - {fileID: 1750321677715140287}
   m_Father: {fileID: 1750321677675474934}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 1750321678426796149}
   - component: {fileID: 1750321678426796154}
   m_Layer: 8
-  m_Name: Gun
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

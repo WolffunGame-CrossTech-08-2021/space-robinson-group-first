@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Weapons/Rifle")]
-public class RifleWeaponData : BaseWeaponData
+namespace Weapon.Data
 {
-    private const int MISSING_ANGLE = 7;
-
-    public override void Fire(Transform firePoint)
+    [CreateAssetMenu(menuName = "Weapons/Rifle")]
+    public class RifleWeaponData : BaseWeaponData
     {
-        PooledObject bullet = GetBulletToFire(firePoint);
-        float angle = Random.Range(-MISSING_ANGLE, MISSING_ANGLE);
-        RotationBullet(ref bullet, firePoint, angle);
-        BackBulletToPool(ref bullet);
+        private const int MissingAngle = 7;
+
+        public override void Fire(Transform firePoint)
+        {
+            float angle = Random.Range(-MissingAngle, MissingAngle);
+            var bullet = GetBulletToFire(firePoint, angle);
+            BackBulletToPool(ref bullet);
+        }
     }
 }

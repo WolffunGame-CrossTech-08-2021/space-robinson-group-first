@@ -11,6 +11,7 @@
   "dependencies": {
     "com.fluid.behavior-tree": "2.2.0",
     "com.h8man.2d.navmeshplus": "https://github.com/h8man/NavMeshPlus.git#master",
+	"com.unity.2d.tilemap.extras": "https://github.com/Unity-Technologies/2d-extras.git#2019.4",
     "com.unity.2d.animation": "3.2.11",
     "com.unity.2d.psdimporter": "2.1.8",
     "com.unity.2d.sprite": "1.0.0",

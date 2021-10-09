@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1bb787184cb9ca4aac6d7dae0a202ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitEffect: {fileID: -4980878948135964239, guid: 0547aec6d117ce746b43ea51f89586b3,
+  rb2d: {fileID: 7566005123240235323}
+  explosionEffect: {fileID: -4980878948135964239, guid: 0547aec6d117ce746b43ea51f89586b3,
     type: 3}
-  Rb2D: {fileID: 7566005123240235323}
   damage: 5
 --- !u!114 &3237100028772063385
 MonoBehaviour:

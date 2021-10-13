@@ -1,5 +1,7 @@
 ﻿using System;
+using Hero;
 using Manager;
+using UI;
 using UnityEngine;
 using Weapon.Data;
 
@@ -59,7 +61,7 @@ namespace Weapon.Logic
             if (shooting.currentBulletsCount >= weaponData.numBulletsToFire)
             {
                 shooting.currentBulletsCount -= weaponData.numBulletsToFire;
-                shooting.SetBulletCount();
+                UIManager.Instance.SetBulletCount(shooting.currentBulletsCount, shooting.totalBulletsCount);
                 weaponData.Fire(firePoint);
 
                 if (shooting.currentBulletsCount == 0)

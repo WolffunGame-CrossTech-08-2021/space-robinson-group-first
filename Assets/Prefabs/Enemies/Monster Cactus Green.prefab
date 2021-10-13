@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 975150567751146617}
   - component: {fileID: 1780279940}
   - component: {fileID: 8023959594768389885}
+  - component: {fileID: 526742992}
   m_Layer: 9
   m_Name: Monster Cactus Green
   m_TagString: Untagged
@@ -178,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015e3a797981b2245a03f473f57e3afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 1780279940}
-  health: {fileID: 8023959594768389885}
+  behaviours:
+  - {fileID: 1780279940}
+  - {fileID: 8023959594768389885}
 --- !u!114 &1780279940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +197,10 @@ MonoBehaviour:
   agent: {fileID: 1780279942}
   scanRadius: 10
   isRunning: 1
+  isBoss: 0
+  bossBullet: {fileID: 0}
+  boosShotAngle: 0
+  bulletSpeed: 10
   showPath: 1
 --- !u!114 &8023959594768389885
 MonoBehaviour:
@@ -209,3 +215,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBar: {fileID: 0}
+--- !u!210 &526742992
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540670906180867908}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

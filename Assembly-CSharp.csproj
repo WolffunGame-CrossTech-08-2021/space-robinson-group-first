@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyEntity.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Spawner.cs" />
      <Compile Include="Assets\Scripts\Entity\AgentEntity.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroEntity.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
@@ -94,6 +95,7 @@
      <Compile Include="Assets\Scripts\Weapon\Logic\RifleWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\ShotgunWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponManager.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponPickupable.cs" />
      <Compile Include="Assets\TestRotation.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -192,9 +194,6 @@
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
  <Reference Include="NavMeshComponents">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/NavMeshComponents.dll</HintPath>
  </Reference>
@@ -218,9 +217,6 @@
  </Reference>
  <Reference Include="Unity.2D.Common.Runtime">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
  <HintPath>D:/Projects/Games/SpaceRobinson/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -443,6 +439,12 @@
  </Reference>
  <Reference Include="DOTween">
  <HintPath>D:/Projects/Games/SpaceRobinson/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.30f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.30f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.30f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -803,18 +805,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.2D.Animation.Samples.Dependency.csproj">
-      <Project>{c520cd41-fce5-6c98-8d13-d930508c15e0}</Project>
-      <Name>Unity.2D.Animation.Samples.Dependency</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Samples.Runtime.csproj">
-      <Project>{991f6260-dba7-db59-a361-eaa5e26b6b98}</Project>
-      <Name>Unity.2D.Animation.Samples.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Animation.Samples.Editor.csproj">
-      <Project>{b0535809-254c-3ea4-0b7c-33cbe7e460ae}</Project>
-      <Name>Unity.2D.Animation.Samples.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="DOTween.Modules.csproj">
       <Project>{ba7d52b6-5eba-cf62-0c99-277553f07494}</Project>
       <Name>DOTween.Modules</Name>

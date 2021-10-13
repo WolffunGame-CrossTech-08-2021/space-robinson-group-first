@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - FirePoint
+  - EnemySpawn
+  - BossSpawn
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Decorative
   - BossBullet
   - Wall
-  - 
+  - ItemWeapon
   - 
   - 
   - 

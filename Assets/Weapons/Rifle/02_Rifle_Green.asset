@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea840b3c93b4d71a52bfdfe011ebfbd, type: 3}
   m_Name: 02_Rifle_Green
   m_EditorClassIdentifier: 
+  icon: {fileID: -425265156163451344, guid: e94a4e76a3600bc4cbb0d19d0dc142da, type: 3}
   weaponPrefab: {fileID: 1750321677675474929, guid: 69280a3c9852e0143bc8fc36d8674d32,
     type: 3}
   bulletPrefab: {fileID: 3237100028772063385, guid: d3d0761d8f2c63941ac52de5b4438601,

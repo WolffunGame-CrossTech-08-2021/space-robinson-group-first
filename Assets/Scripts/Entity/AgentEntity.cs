@@ -6,7 +6,7 @@ namespace Entity
     public class AgentEntity : MonoBehaviour
     {
         [SerializeField]
-        private BaseMonoBehaviour[] behaviours;
+        protected BaseMonoBehaviour[] behaviours;
 
         public Action<float> OnTakeDamage;
         public Action<float> OnHealing;
@@ -21,9 +21,9 @@ namespace Entity
         protected virtual void Awake()
         {
             // Setup event
-            for(int i = 0; i < behaviours.Length; i++)
+            foreach (var behaviour in behaviours)
             {
-                if (behaviours[i] is IDamageable healthBehaviour)
+                if (behaviour is IDamageable healthBehaviour)
                 {
                     OnTakeDamage += healthBehaviour.TakeDamage;
                 }

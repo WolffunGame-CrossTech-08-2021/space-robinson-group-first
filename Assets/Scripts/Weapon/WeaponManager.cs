@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Manager;
+using UI;
 using UnityEngine;
 using Weapon.Data;
 
@@ -7,13 +10,10 @@ namespace Weapon
     public class WeaponManager : MonoBehaviour
     {
         [SerializeField]
-        private HeroShooting heroShooting;
-
-        [SerializeField]
         private List<BaseWeaponData> weapons;
 
-        private int _currentWeaponIndex = 0;
-    
+        private int _currentWeaponIndex;
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -22,8 +22,8 @@ namespace Weapon
 
         private void ChangeWeapon()
         {
-            heroShooting.weaponData = weapons[(_currentWeaponIndex + 1) % weapons.Count];
-            heroShooting.InitWeapon();
+            var weapon = weapons[(_currentWeaponIndex + 1) % weapons.Count];
+            GameManager.Instance.heroEntity.ChangeWeapon(weapon);
             _currentWeaponIndex++;
         }
     }

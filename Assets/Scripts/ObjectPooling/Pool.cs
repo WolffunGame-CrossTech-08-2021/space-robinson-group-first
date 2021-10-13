@@ -20,8 +20,10 @@ namespace ObjectPooling
         // A queue works pretty naturally here.
         private Dictionary<int, Queue<PooledObject>> pool;
 
-        protected override void OnAwake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             // Spawn all objects in provided pools.
             pool = new Dictionary<int, Queue<PooledObject>>();
             foreach (ObjectPool objPool in objectPools)

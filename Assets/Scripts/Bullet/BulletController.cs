@@ -37,8 +37,8 @@ namespace Bullet
                 enemyEntity.OnTakeDamage?.Invoke(damage);
             }
 
+            // Create explosion effect
             PooledObject effect = Pool.Instance.Spawn(explosionEffect, transform.position, Quaternion.identity);
-
             effect.FinishDelayed(1f);
             pooledObject.Finish();
         }

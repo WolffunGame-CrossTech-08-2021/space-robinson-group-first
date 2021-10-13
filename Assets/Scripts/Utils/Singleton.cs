@@ -50,14 +50,11 @@ public abstract class Singleton<T> : Singleton where T : MonoBehaviour
     #endregion
 
     #region  Methods
-    private void Awake()
+    protected virtual void Awake()
     {
         if (_persistent)
             DontDestroyOnLoad(gameObject);
-        OnAwake();
     }
-
-    protected virtual void OnAwake() { }
     #endregion
 }
 

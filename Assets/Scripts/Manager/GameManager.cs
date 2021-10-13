@@ -1,14 +1,35 @@
-﻿using UnityEngine;
+﻿using System;
+using Hero;
+using UnityEngine;
 using UnityEngine.Rendering;
 
 namespace Manager
 {
     public class GameManager : Singleton<GameManager>
     {
+        public GameObject defaultPlayerPrefab;
+        public Transform respawnPoint;
+        public UI.FollowCamera followCamera;
+        
+        [NonSerialized] public GameObject player;
+        [NonSerialized] public HeroEntity heroEntity;
+
+        private void OnValidate()
+        {
+            if (respawnPoint == null)
+                respawnPoint = GameObject.FindWithTag("Respawn").transform;
+        }
+
         private void Start()
         {
-            GraphicsSettings.transparencySortMode = TransparencySortMode.CustomAxis;
-            GraphicsSettings.transparencySortAxis = new Vector3(0.0f, 1.0f, 1.0f);
+            CreateCharacter();
+        }
+
+        private void CreateCharacter()
+        {
+            player = Instantiate(defaultPlayerPrefab, respawnPoint);
+            heroEntity = player.GetComponent<HeroEntity>();
+            followCamera.playerTransform = player.transform;
         }
     }
 }

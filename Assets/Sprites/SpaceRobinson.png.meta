@@ -104,6 +104,9 @@ TextureImporter:
   - first:
       213: 2838596861458926322
     second: map_01_ground_01
+  - first:
+      213: -5259075790144843929
+    second: weapon_wrench
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -410,7 +413,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -868,7 +871,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1804
-        y: 2071
+        y: 2070
         width: 94
         height: 37
       alignment: 0
@@ -1237,6 +1240,27 @@ TextureImporter:
       bones: []
       spriteID: 2fa4cc35ec8b46720800000000000000
       internalID: 2838596861458926322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_wrench
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1525
+        width: 47
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f4f81ce620407b0800000000000000
+      internalID: -5259075790144843929
       vertices: []
       indices: 
       edges: []

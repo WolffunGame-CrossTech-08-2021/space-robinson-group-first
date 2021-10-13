@@ -1,49 +1,74 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class AutomicDoorController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    private float _doorCloseAt;
+    public AudioClip openDoorSound;
+    public AudioClip closeDoorSound;
+    
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private AudioSource speaker;
+    [SerializeField]
+    private BoxCollider2D doorCollider;
 
-    private float _doorOpenAt;
+    private bool _onSensor;
+    private static readonly int OnSensor = Animator.StringToHash("OnSensor");
 
-    private bool _isDoorOpen;
-
-    private void Update()
+    private void OnValidate()
     {
-        // xử lý ở đây :v
+        if (animator == null)
+            animator = GetComponent<Animator>();
+        if (speaker == null)
+            speaker = GetComponent<AudioSource>();
+        if (doorCollider == null)
+            doorCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !_isDoorOpen && _doorOpenAt + 0.5f < Time.time)
-        {
-            // Debug.Log("Open the door !");
-            _animator.SetBool("OnSensor", true);
-            _isDoorOpen = true;
-            _doorOpenAt = Time.time;
-        }
+        if (!collision.CompareTag("Player"))
+            return;
+        
+        if (_onSensor)
+            return;
+
+        ChangDoorState(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && _isDoorOpen && _doorCloseAt + 0.5f < Time.time)
-        {
-            // Debug.Log("Close the door !");
-            _animator.SetBool("OnSensor", false);
-            _isDoorOpen = false;
-            _doorCloseAt = Time.time;
-        }
+        if (!collision.CompareTag("Player"))
+            return;
+        
+        if (!_onSensor)
+            return;
+
+        ChangDoorState(false);
     }
 
-    private void OnValidate()
+    private void ChangDoorState(bool isOpen)
     {
-        if (_animator == null)
-            _animator = GetComponent<Animator>();
+        animator.SetBool(OnSensor, isOpen);
+        _onSensor = isOpen;
     }
-
+    
+    private void ChangeDoorCollider(bool isOpen)
+    {
+        // doorCollider.enabled = !isOpen;
+        speaker.PlayOneShot(isOpen ? openDoorSound : closeDoorSound);
+    }
+    
+    public void OnDoorOpened()
+    {
+        ChangeDoorCollider(true);
+    }
 
     public void OnDoorClosed()
     {
+        ChangeDoorCollider(false);
     }
+
+    
 }

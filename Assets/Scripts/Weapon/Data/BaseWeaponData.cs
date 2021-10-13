@@ -5,6 +5,7 @@ namespace Weapon.Data
 {
     public abstract class BaseWeaponData : ScriptableObject
     {
+        public Sprite icon;
         public GameObject weaponPrefab;
         public PooledObject bulletPrefab;
         public float bulletSpeed = 10f;

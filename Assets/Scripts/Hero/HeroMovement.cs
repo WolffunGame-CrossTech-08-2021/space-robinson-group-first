@@ -25,7 +25,7 @@ public class HeroMovement : BaseMonoBehaviour
         movement.x = InputManager.MoveHorizontal;
         movement.y = InputManager.MoveVertical;
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Move();
 

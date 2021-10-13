@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc37bb1b37c9c1f4587881d1b135badc, type: 3}
   m_Name: 01_Piston_Default
   m_EditorClassIdentifier: 
+  icon: {fileID: 7061785020687489169, guid: e94a4e76a3600bc4cbb0d19d0dc142da, type: 3}
   weaponPrefab: {fileID: 6482402793054869416, guid: 7b13b12529ef30448abad66a21b850f7,
     type: 3}
   bulletPrefab: {fileID: 3237100028772063385, guid: b1e4a43106e2a304e9a826aec11e7d73,

@@ -1,4 +1,5 @@
-﻿using ObjectPooling;
+﻿using Enemy;
+using ObjectPooling;
 using UnityEngine;
 
 namespace Bullet
@@ -12,7 +13,7 @@ namespace Bullet
         public PooledObject pooledObject;
     
         public PooledObject explosionEffect;
-        public float damage = 5f;
+        public int damage = 5;
 
         private void OnValidate()
         {

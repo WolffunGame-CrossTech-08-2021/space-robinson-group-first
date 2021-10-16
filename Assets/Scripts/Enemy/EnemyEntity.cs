@@ -1,6 +1,13 @@
-﻿using System.Collections;
-using Entity;
+﻿using ECS;
 using UnityEngine;
-public class EnemyEntity : AgentEntity
+
+namespace Enemy
 {
+    public class EnemyEntity : BaseEntity
+    {
+        protected override void EntityDead()
+        {
+            Debug.Log($"{gameObject.name} dead !");
+        }
+    }
 }

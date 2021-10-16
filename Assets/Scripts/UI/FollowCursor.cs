@@ -17,12 +17,6 @@ namespace UI
                 animClick = GetComponent<Animator>();
         }
 
-        private void Awake()
-        {
-            Cursor.visible = false;
-            
-        }
-        
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))

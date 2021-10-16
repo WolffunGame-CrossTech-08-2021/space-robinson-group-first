@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections;
 using Hero;
+using UI;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using Weapon;
+using Weapon.Data;
 
 namespace Manager
 {
@@ -9,8 +13,10 @@ namespace Manager
     {
         public GameObject defaultPlayerPrefab;
         public Transform respawnPoint;
-        public UI.FollowCamera followCamera;
-        
+        public FollowCamera followCamera;
+
+        public BaseWeaponData defaultWeapon;
+
         [NonSerialized] public GameObject player;
         [NonSerialized] public HeroEntity heroEntity;
 
@@ -23,13 +29,54 @@ namespace Manager
         private void Start()
         {
             CreateCharacter();
+            Cursor.visible = false;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                StartCoroutine(StartLoad());
+            }
+        }
+        
+        IEnumerator StartLoad()
+        {
+            var sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+            while (!operation.isDone)
+            {
+                yield return null;
+            }
+            CreateCharacter();
         }
 
         private void CreateCharacter()
         {
-            player = Instantiate(defaultPlayerPrefab, respawnPoint);
+            if (respawnPoint == null)
+                respawnPoint = GameObject.FindWithTag("Respawn").transform;
+            
+            player = Instantiate(defaultPlayerPrefab, respawnPoint.position, Quaternion.identity);
             heroEntity = player.GetComponent<HeroEntity>();
             followCamera.playerTransform = player.transform;
+        }
+
+        public void GameOver()
+        {
+            UIManager.Instance.GameOver();
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            
+            // Save game ...
+        }
+
+        public void Restart()
+        {
+            UIManager.Instance.Restart();
+            Start();
+            Time.timeScale = 1f;
+            
+            // Reset súng đạn, chuyển về màn cũ các kiểu con đà điểu
         }
     }
 }

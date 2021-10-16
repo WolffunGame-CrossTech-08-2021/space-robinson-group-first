@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using DG.Tweening;
+using ECS;
 using UI;
 using UnityEngine;
 using Weapon.Data;
 
 namespace Hero
 {
-    public class HeroShooting : BaseMonoBehaviour
+    public class HeroShooting : BaseComponent
     {
         public GameObject weaponAndHands;
         public BaseWeaponData weaponData;
@@ -36,7 +37,7 @@ namespace Hero
             // Remove all child gameObject in weaponAndHands
             foreach (Transform child in weaponAndHands.transform)
             {
-                DestroyImmediate(child.gameObject);
+                Destroy(child.gameObject);
             }
 
             // Add weapon to character

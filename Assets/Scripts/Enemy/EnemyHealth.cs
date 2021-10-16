@@ -1,44 +1,45 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using ECS;
 using UnityEngine.UI;
 
-public class EnemyHealth : BaseMonoBehaviour, IDamageable
+namespace Enemy
 {
-    public float maxHealth = 100f;
-    public Image healthBar;
-
-    private float _currentHealth;
-
-    private void Awake()
+    public class EnemyHealth : BaseComponent, IDamageable
     {
-        _currentHealth = maxHealth;
-    }
+        public int maxHealth = 100;
+        public Image healthBar;
+        
+        private int _currentHealth;
 
-    public void TakeDamage(float damage)
-    {
-        float newHealth = _currentHealth - damage;
-        if (newHealth <= 0)
-        {
-            _currentHealth = 0;
-            gameObject.SetActive(false);
-            return;
-        }
-
-        if (newHealth > maxHealth)
+        private void Awake()
         {
             _currentHealth = maxHealth;
-            return;
+            if (healthBar != null)
+                healthBar.fillAmount = 1f;
         }
 
-        _currentHealth = newHealth;
-
-        if (healthBar != null)
+        public void TakeDamage(int damage)
         {
-            healthBar.fillAmount = _currentHealth / maxHealth;
-        }
-    }
+            int newHealth = _currentHealth - damage;
+            if (newHealth <= 0)
+            {
+                entity.OnDeath?.Invoke();
+                _currentHealth = 0;
+                gameObject.SetActive(false);
+                return;
+            }
 
-    public override void DoUpdate()
-    {
+            if (newHealth > maxHealth)
+            {
+                _currentHealth = maxHealth;
+                return;
+            }
+
+            _currentHealth = newHealth;
+
+            if (healthBar != null)
+            {
+                healthBar.fillAmount = _currentHealth / maxHealth;
+            }
+        }
     }
 }

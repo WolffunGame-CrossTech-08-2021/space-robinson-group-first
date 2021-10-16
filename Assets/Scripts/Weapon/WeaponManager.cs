@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Manager;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Weapon.Data;
 
 namespace Weapon
 {
-    public class WeaponManager : MonoBehaviour
+    public class WeaponManager : Singleton<WeaponManager>
     {
         [SerializeField]
         private List<BaseWeaponData> weapons;

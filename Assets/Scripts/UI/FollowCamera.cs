@@ -2,7 +2,7 @@
 
 namespace UI
 {
-    public class FollowCamera : MonoBehaviour
+    public class FollowCamera : Singleton<FollowCamera>
     {
         public float dampTime = 0.3f;
         public float maxDistance = 7.5f;

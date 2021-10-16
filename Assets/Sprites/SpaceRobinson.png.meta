@@ -107,6 +107,12 @@ TextureImporter:
   - first:
       213: -5259075790144843929
     second: weapon_wrench
+  - first:
+      213: 8865346914746570041
+    second: ui_health_icon
+  - first:
+      213: 3601942930107447518
+    second: ui_health_cell
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1253,7 +1259,7 @@ TextureImporter:
         width: 47
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1261,6 +1267,48 @@ TextureImporter:
       bones: []
       spriteID: 76f4f81ce620407b0800000000000000
       internalID: -5259075790144843929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_health_icon
+      rect:
+        serializedVersion: 2
+        x: 1754
+        y: 1825
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93513106c0a080b70800000000000000
+      internalID: 8865346914746570041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_health_cell
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 2466
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8b842d20cacf130800000000000000
+      internalID: 3601942930107447518
       vertices: []
       indices: 
       edges: []

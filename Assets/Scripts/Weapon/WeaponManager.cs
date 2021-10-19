@@ -10,10 +10,8 @@ namespace Weapon
 {
     public class WeaponManager : Singleton<WeaponManager>
     {
-        [SerializeField]
-        private List<BaseWeaponData> weapons;
-
-        private int _currentWeaponIndex;
+        [NonSerialized] public BaseWeaponData WeaponNeedChange;
+        [NonSerialized] public GameObject WeaponChangeObject;
 
         void Update()
         {
@@ -23,9 +21,11 @@ namespace Weapon
 
         private void ChangeWeapon()
         {
-            var weapon = weapons[(_currentWeaponIndex + 1) % weapons.Count];
-            GameManager.Instance.heroEntity.ChangeWeapon(weapon);
-            _currentWeaponIndex++;
+            if (WeaponNeedChange != null)
+            {
+                GameManager.Instance.heroEntity.ChangeWeapon(WeaponNeedChange);
+                Destroy(WeaponChangeObject);
+            }
         }
     }
 }

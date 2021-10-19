@@ -1,4 +1,5 @@
-﻿using Enemy;
+﻿using ECS;
+using Enemy;
 using ObjectPooling;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace Bullet
     
         public PooledObject explosionEffect;
         public int damage = 5;
+
+        public LayerMask layerTakeDamage;
 
         private void OnValidate()
         {
@@ -32,9 +35,10 @@ namespace Bullet
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            // Check layer in layer take damage
+            if (layerTakeDamage == (layerTakeDamage | (1 << collision.gameObject.layer)))
             {
-                EnemyEntity enemyEntity = collision.gameObject.GetComponent<EnemyEntity>();
+                BaseEntity enemyEntity = collision.gameObject.GetComponent<BaseEntity>();
                 enemyEntity.OnTakeDamage?.Invoke(damage);
             }
 

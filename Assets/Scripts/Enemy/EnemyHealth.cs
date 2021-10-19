@@ -3,38 +3,20 @@ using UnityEngine.UI;
 
 namespace Enemy
 {
-    public class EnemyHealth : BaseComponent, IDamageable
+    public class EnemyHealth : BaseHealthComponent
     {
-        public int maxHealth = 100;
         public Image healthBar;
-        
-        private int _currentHealth;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _currentHealth = maxHealth;
+            base.Awake();
             if (healthBar != null)
                 healthBar.fillAmount = 1f;
         }
 
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
-            int newHealth = _currentHealth - damage;
-            if (newHealth <= 0)
-            {
-                entity.OnDeath?.Invoke();
-                _currentHealth = 0;
-                gameObject.SetActive(false);
-                return;
-            }
-
-            if (newHealth > maxHealth)
-            {
-                _currentHealth = maxHealth;
-                return;
-            }
-
-            _currentHealth = newHealth;
+            base.TakeDamage(damage);
 
             if (healthBar != null)
             {

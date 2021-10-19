@@ -1,4 +1,5 @@
 ﻿using ECS;
+using Item;
 using Manager;
 using UI;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Hero
     {
         [SerializeField]
         private HeroShooting shooting;
-
+        
         protected override void OnValidate()
         {
             base.OnValidate();
@@ -32,6 +33,8 @@ namespace Hero
 
         public void ChangeWeapon(BaseWeaponData weapon)
         {
+            ItemManager.Instance.DropItem(shooting.weaponData);
+            
             shooting.weaponData = weapon;
             shooting.InitWeapon();
         }

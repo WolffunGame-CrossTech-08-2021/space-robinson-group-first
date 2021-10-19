@@ -3,9 +3,9 @@ using Item;
 using Manager;
 using UnityEngine;
 
-namespace Enemy
+namespace Box
 {
-    public class EnemyEntity : BaseEntity
+    public class BoxEntity : BaseEntity
     {
         public BaseItemData[] dropItems;
         

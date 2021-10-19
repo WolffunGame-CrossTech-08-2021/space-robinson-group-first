@@ -22,7 +22,10 @@ namespace UI
         
         [SerializeField]
         private GameObject gameOver;
-
+        
+        [SerializeField]
+        private GameObject pickupItem;
+        
         private int _numSeconds;
 
         private float _nextSecondTime = 0f;
@@ -63,6 +66,11 @@ namespace UI
 
                 healthCells[i].enabled = true;
             }
+        }
+
+        public void SetPickupItem(bool isShow)
+        {
+            pickupItem.SetActive(isShow);
         }
 
         public void GameOver()

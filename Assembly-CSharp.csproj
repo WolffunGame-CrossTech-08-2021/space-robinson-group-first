@@ -53,6 +53,7 @@
      <Compile Include="Assets\AutomicDoorController.cs" />
      <Compile Include="Assets\ButtonHandler.cs" />
      <Compile Include="Assets\HealthText.cs" />
+     <Compile Include="Assets\ItemTest.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -60,9 +61,11 @@
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+     <Compile Include="Assets\Scripts\Box\BoxEntity.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\Scripts\ECS\BaseComponent.cs" />
      <Compile Include="Assets\Scripts\ECS\BaseEntity.cs" />
+     <Compile Include="Assets\Scripts\ECS\BaseHealthComponent.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyBrain.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyEntity.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
@@ -71,11 +74,17 @@
      <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroShooting.cs" />
      <Compile Include="Assets\Scripts\IDamageable.cs" />
+     <Compile Include="Assets\Scripts\Item\BaseItemData.cs" />
+     <Compile Include="Assets\Scripts\Item\ItemPickup.cs" />
+     <Compile Include="Assets\Scripts\Item\ItemType.cs" />
+     <Compile Include="Assets\Scripts\Item\WeaponItemData.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\InputManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\ItemManager.cs" />
      <Compile Include="Assets\Scripts\Manager\Spawner.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\Pool.cs" />
      <Compile Include="Assets\Scripts\ObjectPooling\PooledObject.cs" />
+     <Compile Include="Assets\Scripts\Skill\BaseSkill.cs" />
      <Compile Include="Assets\Scripts\UI\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\UI\FollowCursor.cs" />
      <Compile Include="Assets\Scripts\UI\InGame.cs" />
@@ -96,7 +105,6 @@
      <Compile Include="Assets\Scripts\Weapon\Logic\RifleWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\ShotgunWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponManager.cs" />
-     <Compile Include="Assets\Scripts\Weapon\WeaponPickupable.cs" />
      <Compile Include="Assets\TestRotation.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

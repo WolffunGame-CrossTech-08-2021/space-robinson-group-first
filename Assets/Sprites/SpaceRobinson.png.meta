@@ -113,6 +113,42 @@ TextureImporter:
   - first:
       213: 3601942930107447518
     second: ui_health_cell
+  - first:
+      213: 6300787067078115538
+    second: item_gem
+  - first:
+      213: 6034827917440900041
+    second: weapon_wrench_hands
+  - first:
+      213: -1136706094905284009
+    second: melee_hit_anim_03
+  - first:
+      213: -7329022796952657852
+    second: melee_hit_anim_02
+  - first:
+      213: -7308038450371131908
+    second: melee_hit_anim_01
+  - first:
+      213: -1400662513201996478
+    second: ui_loading_back
+  - first:
+      213: -5701125490210831251
+    second: ui_loading_front
+  - first:
+      213: 1779715023697566643
+    second: ground_ship_big_01
+  - first:
+      213: 1954135818134383430
+    second: ground_ship_big_02
+  - first:
+      213: 3524395610043689430
+    second: ground_ship_big_03
+  - first:
+      213: 8649712442559171367
+    second: ground_ship_big_04
+  - first:
+      213: -4942276812815303949
+    second: dark_layer
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1280,7 +1316,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1301,7 +1337,7 @@ TextureImporter:
         width: 9
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1309,6 +1345,258 @@ TextureImporter:
       bones: []
       spriteID: ed8b842d20cacf130800000000000000
       internalID: 3601942930107447518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item_gem
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 1589
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0019a5474e07750800000000000000
+      internalID: 6300787067078115538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon_wrench_hands
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1511
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbdcab540400c350800000000000000
+      internalID: 6034827917440900041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_hit_anim_03
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 2091
+        width: 60
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a262744db9930f0800000000000000
+      internalID: -1136706094905284009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_hit_anim_02
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 2083
+        width: 60
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440a5e4d8941a4a90800000000000000
+      internalID: -7329022796952657852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_hit_anim_01
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 2297
+        width: 60
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf58bb0cfb1a49a90800000000000000
+      internalID: -7308038450371131908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_loading_back
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2056
+        width: 544
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d93628dd8df8ce0800000000000000
+      internalID: -1400662513201996478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_loading_front
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 2047
+        width: 530
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d640f00929881e0b0800000000000000
+      internalID: -5701125490210831251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_big_01
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 2416
+        width: 214
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb5bec7261d2b810800000000000000
+      internalID: 1779715023697566643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_big_02
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2597
+        width: 214
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b64c25c2c7e1b10800000000000000
+      internalID: 1954135818134383430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_big_03
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2628
+        width: 214
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9a990622b29e030800000000000000
+      internalID: 3524395610043689430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_ship_big_04
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2426
+        width: 214
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b040c63a3f90870800000000000000
+      internalID: 8649712442559171367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark_layer
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 2956
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa7e7e8c61896bb0800000000000000
+      internalID: -4942276812815303949
       vertices: []
       indices: 
       edges: []

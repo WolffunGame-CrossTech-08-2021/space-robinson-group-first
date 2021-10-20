@@ -1,4 +1,5 @@
 ﻿using ECS;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Enemy
@@ -20,7 +21,7 @@ namespace Enemy
 
             if (healthBar != null)
             {
-                healthBar.fillAmount = _currentHealth / maxHealth;
+                healthBar.fillAmount = (float)_currentHealth / maxHealth;
             }
         }
     }

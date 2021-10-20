@@ -136,9 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7566005123240235323}
+  pooledObject: {fileID: 3237100028772063385}
   explosionEffect: {fileID: -4980878948135964239, guid: 0547aec6d117ce746b43ea51f89586b3,
     type: 3}
-  damage: 5
+  damage: 2
+  layerTakeDamage:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &3237100028772063385
 MonoBehaviour:
   m_ObjectHideFlags: 0

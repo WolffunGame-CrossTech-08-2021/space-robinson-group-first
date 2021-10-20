@@ -8,7 +8,7 @@ namespace Manager
     {
         public GameObject defaultItemPrefab;
 
-        public void DropItem(BaseItemData item, Vector3 location)
+        private void DropItem(BaseItemData item, Vector3 location)
         {
             Vector3 spawnPosition = new Vector3(location.x + Random.Range(-1f, 1f), location.y + Random.Range(-1f, 1f), 0);
             var itemDropped = Instantiate(defaultItemPrefab, spawnPosition, Quaternion.identity);

@@ -4,7 +4,7 @@ namespace Manager
 {
     public class Spawner : MonoBehaviour
     {
-        public GameObject monsterPrefab;
+        public GameObject[] monstersPrefab;
         public GameObject[] monsterSpawns;
 
         private void OnValidate()
@@ -17,7 +17,7 @@ namespace Manager
         {
             foreach (GameObject monster in monsterSpawns)
             {
-                Instantiate(monsterPrefab, monster.transform.position, monster.transform.rotation);
+                Instantiate(monstersPrefab[Random.Range(0, monstersPrefab.Length)], monster.transform.position, monster.transform.rotation);
             }
         }
     }

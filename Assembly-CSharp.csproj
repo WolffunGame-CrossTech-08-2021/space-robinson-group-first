@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\ECS\BaseComponent.cs" />
      <Compile Include="Assets\Scripts\ECS\BaseEntity.cs" />
      <Compile Include="Assets\Scripts\ECS\BaseHealthComponent.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyBossBrain.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyBrain.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyEntity.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />

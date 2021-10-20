@@ -161,6 +161,18 @@ TextureImporter:
   - first:
       213: -8099006095186980262
     second: item_bullet
+  - first:
+      213: -5437613376422115389
+    second: monster_cactus_red_idle_01
+  - first:
+      213: -4488188848166127475
+    second: monster_ghost_yellow_idle_01
+  - first:
+      213: 8660482942139204596
+    second: monster_boom_red_idle_01
+  - first:
+      213: 1836638702307815556
+    second: monster_boom_purple_idle_01
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1643,7 +1655,7 @@ TextureImporter:
         width: 20
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1664,7 +1676,7 @@ TextureImporter:
         width: 19
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1685,7 +1697,7 @@ TextureImporter:
         width: 19
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1693,6 +1705,90 @@ TextureImporter:
       bones: []
       spriteID: a5218a6eddc8a9f80800000000000000
       internalID: -8099006095186980262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_cactus_red_idle_01
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1368
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c78270a177b984b0800000000000000
+      internalID: -5437613376422115389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ghost_yellow_idle_01
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1031
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d883034a500c6b1c0800000000000000
+      internalID: -4488188848166127475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_boom_red_idle_01
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 1052
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f38985c957303870800000000000000
+      internalID: 8660482942139204596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_boom_purple_idle_01
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 1060
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480bac73b2d0d7910800000000000000
+      internalID: 1836638702307815556
       vertices: []
       indices: 
       edges: []

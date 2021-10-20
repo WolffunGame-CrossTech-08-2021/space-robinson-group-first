@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Manager
 {
@@ -33,6 +34,14 @@ namespace Manager
             MoveHorizontal = Input.GetAxis("Horizontal");
             MoveVertical = Input.GetAxis("Vertical");
             IsPressFire = Input.GetButtonDown("Fire1");
+#endif
+        }
+
+        private void LateUpdate()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+#else
+            IsPressFire = false;
 #endif
         }
     }

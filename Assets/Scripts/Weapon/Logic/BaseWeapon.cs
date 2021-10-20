@@ -16,7 +16,7 @@ namespace Weapon.Logic
         public Action OnFired;
         public Action OnNotEnoughBullet;
 
-        private HeroShooting shooting;
+        private HeroShooting _shooting;
         protected float interval;
 
         private void OnValidate()
@@ -27,11 +27,12 @@ namespace Weapon.Logic
 
         private void Awake()
         {
-            shooting = GetComponentInParent<HeroShooting>();
+            _shooting = GetComponentInParent<HeroShooting>();
             if (OnFired == null)
             {
-                OnFired += shooting.PlayShootAudio;
-                OnFired += shooting.CameraShakeOnFire;
+                OnFired += _shooting.PlayShootAudio;
+                OnFired += _shooting.CameraShakeOnFire;
+                OnFired += _shooting.OnGunFired;
             }
 
             if (OnNotEnoughBullet == null)
@@ -58,13 +59,13 @@ namespace Weapon.Logic
 
         protected bool Firing()
         {
-            if (shooting.currentBulletsCount >= weaponData.numBulletsToFire)
+            if (_shooting.currentBulletsCount >= weaponData.numBulletsToFire)
             {
-                shooting.currentBulletsCount -= weaponData.numBulletsToFire;
-                UIManager.Instance.SetBulletCount(shooting.currentBulletsCount, shooting.totalBulletsCount);
+                _shooting.currentBulletsCount -= weaponData.numBulletsToFire;
+                UIManager.Instance.SetBulletCount(_shooting.currentBulletsCount, _shooting.totalBulletsCount);
                 weaponData.Fire(firePoint);
 
-                if (shooting.currentBulletsCount == 0)
+                if (_shooting.currentBulletsCount == 0)
                     OnNotEnoughBullet.Invoke();
 
                 return true;
@@ -75,9 +76,9 @@ namespace Weapon.Logic
 
         public void RechargeBullet()
         {
-            if (shooting.totalBulletsCount > 0)
+            if (_shooting.totalBulletsCount > 0)
             {
-                StartCoroutine(shooting.RechargeBulletAnimation());
+                StartCoroutine(_shooting.RechargeBulletAnimation());
             }
         }
     }

@@ -96,11 +96,15 @@
      <Compile Include="Assets\Scripts\Utils\PixelPerfect.cs" />
      <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\BaseWeaponData.cs" />
+     <Compile Include="Assets\Scripts\Weapon\Data\Melee\BaseMeleeWeaponData.cs" />
+     <Compile Include="Assets\Scripts\Weapon\Data\Melee\WrenchWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\PistonWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\RifleWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Data\ShotgunWeaponData.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\BaseWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\MachineGunWeapon.cs" />
+     <Compile Include="Assets\Scripts\Weapon\Logic\Melee\BaseMeleeWeapon.cs" />
+     <Compile Include="Assets\Scripts\Weapon\Logic\Melee\WrenchWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\PistonWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\RifleWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\Logic\ShotgunWeapon.cs" />

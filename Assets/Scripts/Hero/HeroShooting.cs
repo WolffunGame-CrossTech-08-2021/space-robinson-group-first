@@ -4,6 +4,8 @@ using ECS;
 using UI;
 using UnityEngine;
 using Weapon.Data;
+using Weapon.Data.Melee;
+using Weapon.Logic.Melee;
 
 namespace Hero
 {
@@ -11,6 +13,9 @@ namespace Hero
     {
         public GameObject weaponAndHands;
         public BaseWeaponData weaponData;
+        
+        public GameObject meleeWeapon;
+        public BaseMeleeWeaponData meleeWeaponData;
 
         public float cameraShakeDuration = 0.05f;
         public float cameraShakeStrength = 0.15f;
@@ -30,6 +35,9 @@ namespace Hero
         private void Awake()
         {
             InitWeapon();
+            InitMeleeWeapon();
+
+            SetMainWeapon(false);
         }
 
         public void InitWeapon()
@@ -51,6 +59,18 @@ namespace Hero
             RechargeBullet();
             
             UIManager.Instance.ChangeWeaponIcon(weaponData);
+        }
+
+        public void InitMeleeWeapon()
+        {
+            // Remove all child gameObject in meleeWeapon
+            foreach (Transform child in meleeWeapon.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            // Add weapon to character
+            Instantiate(meleeWeaponData.weaponPrefab, meleeWeapon.transform);
         }
 
         public IEnumerator RechargeBulletAnimation()
@@ -82,18 +102,22 @@ namespace Hero
             mousePos.z = 10;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            Vector2 direct = new Vector2(mousePos.x - weaponAndHands.transform.position.x, mousePos.y - weaponAndHands.transform.position.y);
+            Vector3 playerPos = transform.position;
+
+            Vector2 direct = new Vector2(mousePos.x - playerPos.x, mousePos.y - playerPos.y);
         
 
-            if (mousePos.x > transform.position.x + 0.1f)
+            if (mousePos.x > playerPos.x + 0.1f)
             {
                 weaponAndHands.transform.right = direct;
+                meleeWeapon.transform.right = direct;
                 return;
             }
 
-            if (mousePos.x < transform.position.x - 0.1f)
+            if (mousePos.x < playerPos.x - 0.1f)
             {
                 weaponAndHands.transform.right = -direct;
+                meleeWeapon.transform.right = -direct;
                 return;
             }
         }
@@ -101,12 +125,41 @@ namespace Hero
         public void PlayShootAudio()
         {
             // _shootingAudio.Stop();
-            shootingAudio.Play();
+            // shootingAudio.Play();
         }
 
         public void CameraShakeOnFire()
         {
             Camera.main.DOShakePosition(cameraShakeDuration, cameraShakeStrength, 10, 90, false);
+        }
+        
+        public void SetMainWeapon(bool isMeleeWeapon)
+        {
+            var renderers = weaponAndHands.GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (var spriteRenderer in renderers)
+            {
+                spriteRenderer.enabled = !isMeleeWeapon;
+            }
+            
+            renderers = meleeWeapon.GetComponentsInChildren<SpriteRenderer>();
+            
+            foreach (var spriteRenderer in renderers)
+            {
+                spriteRenderer.enabled = isMeleeWeapon;
+            }
+        }
+
+        public void OnGunFired()
+        {
+            SetMainWeapon(false);
+            shootingAudio.PlayOneShot(weaponData.fireAudio);
+        }
+
+        public void OnMeleeFired()
+        {
+            SetMainWeapon(true);
+            shootingAudio.PlayOneShot(meleeWeaponData.fireAudio);
         }
     }
 }

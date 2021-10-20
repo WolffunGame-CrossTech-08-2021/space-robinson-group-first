@@ -8,5 +8,9 @@ namespace Item
         public ItemType type;
         [Range(0, 1)]
         public float dropRate = 1f;
+
+        public abstract void Activate(Collider2D other);
+
+        public abstract void Deactivate(Collider2D other);
     }
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 3894274899881324085}
   maxHealth: 5
-  damageHeroClip: {fileID: 8300000, guid: e028ae4f6e79ce740b8ee952acd8c3cd, type: 3}
+  damageHeroAudio: {fileID: 8300000, guid: e028ae4f6e79ce740b8ee952acd8c3cd, type: 3}
 --- !u!82 &3894274899881324087
 AudioSource:
   m_ObjectHideFlags: 0

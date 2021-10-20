@@ -14,5 +14,15 @@ namespace Item
             // Cast type to weapon
             type = ItemType.Weapon;
         }
+
+        public override void Activate(Collider2D other)
+        {
+            
+        }
+
+        public override void Deactivate(Collider2D other)
+        {
+            
+        }
     }
 }

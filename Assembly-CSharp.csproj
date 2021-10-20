@@ -69,12 +69,14 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyBrain.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyEntity.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySkill.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroEntity.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroHealth.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroMovement.cs" />
      <Compile Include="Assets\Scripts\Hero\HeroShooting.cs" />
      <Compile Include="Assets\Scripts\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Item\BaseItemData.cs" />
+     <Compile Include="Assets\Scripts\Item\HealthItemData.cs" />
      <Compile Include="Assets\Scripts\Item\ItemPickup.cs" />
      <Compile Include="Assets\Scripts\Item\ItemType.cs" />
      <Compile Include="Assets\Scripts\Item\WeaponItemData.cs" />

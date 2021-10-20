@@ -30,6 +30,7 @@ namespace ECS
                 if (component is IDamageable healthBehaviour)
                 {
                     OnTakeDamage += healthBehaviour.TakeDamage;
+                    OnHealing += healthBehaviour.Healing;
                 }
             }
             

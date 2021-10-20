@@ -8,9 +8,9 @@ namespace Manager
     {
         public GameObject defaultItemPrefab;
 
-        public void DropItem(BaseItemData item)
+        public void DropItem(BaseItemData item, Vector3 location)
         {
-            Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-2f, 2f), transform.position.y + Random.Range(-2f, 2f), 0);
+            Vector3 spawnPosition = new Vector3(location.x + Random.Range(-1f, 1f), location.y + Random.Range(-1f, 1f), 0);
             var itemDropped = Instantiate(defaultItemPrefab, spawnPosition, Quaternion.identity);
             var control = itemDropped.GetComponent<ItemPickup>();
             control.data = item;
@@ -22,7 +22,7 @@ namespace Manager
             // DropItem(item);
         }
 
-        public void EntityDeadDropItems(BaseItemData[] items)
+        public void EntityDeadDropItems(BaseItemData[] items, Vector3 location)
         {
             if (items.Length == 0)
                 return;
@@ -35,7 +35,7 @@ namespace Manager
                 
                 if (Random.value <= items[i].dropRate)
                 {
-                    DropItem(items[i]);
+                    DropItem(items[i], location);
                     if (items[i] is WeaponItemData)
                         isAlreadySpawnWeapon = true;
                 }

@@ -9,9 +9,8 @@ namespace Item
     public class ItemPickup : MonoBehaviour
     {
         public BaseItemData data;
-        
-        [SerializeField]
-        private SpriteRenderer spriteRenderer;
+
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         private void OnValidate()
         {
@@ -37,7 +36,11 @@ namespace Item
                     WeaponManager.Instance.WeaponChangeObject = gameObject;
                     WeaponManager.Instance.WeaponNeedChange = weapon.data;
                     UIManager.Instance.SetPickupItem(true);
-                    
+                    break;
+
+                default:
+                    data.Activate(other);
+                    Destroy(gameObject);
                     break;
             }
         }

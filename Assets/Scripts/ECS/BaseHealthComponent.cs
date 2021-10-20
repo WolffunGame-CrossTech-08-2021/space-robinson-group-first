@@ -29,5 +29,10 @@
 
             _currentHealth = newHealth;
         }
+
+        public void Healing(int health)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

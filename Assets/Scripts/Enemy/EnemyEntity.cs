@@ -11,7 +11,7 @@ namespace Enemy
         
         protected override void EntityDead()
         {
-            ItemManager.Instance.EntityDeadDropItems(dropItems);
+            ItemManager.Instance.EntityDeadDropItems(dropItems, transform.position);
         }
     }
 }

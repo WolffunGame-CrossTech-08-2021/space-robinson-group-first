@@ -149,6 +149,18 @@ TextureImporter:
   - first:
       213: -4942276812815303949
     second: dark_layer
+  - first:
+      213: 649127957449136884
+    second: item_apple
+  - first:
+      213: 483748932195344948
+    second: item_healthcare_box
+  - first:
+      213: -3421466480501509861
+    second: item_boots
+  - first:
+      213: -8099006095186980262
+    second: item_bullet
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1597,6 +1609,90 @@ TextureImporter:
       bones: []
       spriteID: 3fa7e7e8c61896bb0800000000000000
       internalID: -4942276812815303949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item_apple
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1137
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fad785207a220900800000000000000
+      internalID: 649127957449136884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item_healthcare_box
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 1128
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4326aff371f96b600800000000000000
+      internalID: 483748932195344948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item_boots
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1119
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b113dca1d528480d0800000000000000
+      internalID: -3421466480501509861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item_bullet
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 1128
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5218a6eddc8a9f80800000000000000
+      internalID: -8099006095186980262
       vertices: []
       indices: 
       edges: []

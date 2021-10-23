@@ -31,6 +31,9 @@ namespace Hero
 
         private void Move()
         {
+            if (GameManager.Instance.isPaused)
+                return;
+            
             _rb.MovePosition(_rb.position + _movement * moveSpeed * Time.fixedDeltaTime);
 
             if (_mousePos.x > transform.position.x && !_facingRight)

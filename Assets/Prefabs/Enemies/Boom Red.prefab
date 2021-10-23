@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8023959594768389885}
   - component: {fileID: 526742992}
   m_Layer: 9
-  m_Name: Ghost Yellow 1
+  m_Name: Boom Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   - {fileID: 3836221884104646421}
   - {fileID: 8023959594768389885}
   dropItems:
-  - {fileID: 11400000, guid: e3bda8940e0a0e6468590cfbce690ad8, type: 2}
+  - {fileID: 11400000, guid: be0139d21e30a81418012b70dee8c938, type: 2}
 --- !u!114 &3836221884104646421
 MonoBehaviour:
   m_ObjectHideFlags: 0

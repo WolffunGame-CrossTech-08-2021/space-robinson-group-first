@@ -19,7 +19,7 @@ namespace Weapon
                 ChangeWeapon();
         }
 
-        private void ChangeWeapon()
+        public void ChangeWeapon()
         {
             if (WeaponNeedChange != null)
             {

@@ -23,10 +23,6 @@ namespace UI
                 animClick.SetBool(LeftMouseClick, true);
 
             _currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-        private void FixedUpdate()
-        {
             transform.position = _currentMousePos;
         }
     }

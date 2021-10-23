@@ -20,10 +20,19 @@ namespace Manager
         [NonSerialized] public GameObject player;
         [NonSerialized] public HeroEntity heroEntity;
 
+        [NonSerialized] public bool isPaused;
+
         private void OnValidate()
         {
             if (respawnPoint == null)
                 respawnPoint = GameObject.FindWithTag("Respawn").transform;
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            Application.quitting += OnQuitting;
         }
 
         private void Start()
@@ -36,11 +45,16 @@ namespace Manager
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                StartCoroutine(StartLoad());
+                LoadNextScene();
             }
         }
-        
-        IEnumerator StartLoad()
+
+        public void LoadNextScene()
+        {
+            StartCoroutine(StartLoad());
+        }
+
+        private IEnumerator StartLoad()
         {
             var sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
             AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
@@ -77,6 +91,32 @@ namespace Manager
             Time.timeScale = 1f;
             
             // Reset súng đạn, chuyển về màn cũ các kiểu con đà điểu
+        }
+
+        public void Pause()
+        {
+            if (!isPaused)
+            {
+                Time.timeScale = 0f;
+                isPaused = true;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                isPaused = false;
+            }
+            UIManager.Instance.Pause(isPaused);
+        }
+        
+        public void OnQuitting()
+        {
+            // Save all data
+            Debug.Log("Done save all data !");
+        }
+
+        public void Exit()
+        {
+            Application.Quit();
         }
     }
 }

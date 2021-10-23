@@ -214,7 +214,7 @@ MonoBehaviour:
   - {fileID: 3836221884104646421}
   - {fileID: 8023959594768389885}
   dropItems:
-  - {fileID: 11400000, guid: e3bda8940e0a0e6468590cfbce690ad8, type: 2}
+  - {fileID: 11400000, guid: 53eb519d1f0ec094faa5b02ce25b2dae, type: 2}
 --- !u!114 &3836221884104646421
 MonoBehaviour:
   m_ObjectHideFlags: 0

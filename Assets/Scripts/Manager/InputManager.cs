@@ -34,6 +34,10 @@ namespace Manager
             MoveHorizontal = Input.GetAxis("Horizontal");
             MoveVertical = Input.GetAxis("Vertical");
             IsPressFire = Input.GetButtonDown("Fire1");
+            
+            if (Input.GetKeyUp(KeyCode.Escape))
+                GameManager.Instance.Pause();
+            
 #endif
         }
 

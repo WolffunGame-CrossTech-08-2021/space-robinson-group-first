@@ -35,6 +35,8 @@ namespace Enemy
 
         private float _attackInterval;
 
+        private bool _isEven;
+
         private void OnValidate()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
@@ -194,12 +196,14 @@ namespace Enemy
             Debug.Log("Boss attack");
             for (int i = 0; i <= 360; i += angle)
             {
-                var bulletRotation = Quaternion.AngleAxis((float)i, Vector3.forward) * attackPoint.rotation;
+                var bulletRotation = Quaternion.AngleAxis((float)i + (_isEven ? 15 : 0), Vector3.forward) * attackPoint.rotation;
                 var bullet = Pool.Instance.Spawn(bulletPrefab, attackPoint.position, bulletRotation);
                 var rb2d = bullet.As<Bullet.BulletController>().rb2d;
                 rb2d.AddForce(rb2d.transform.up * attackForce, ForceMode2D.Impulse);
                 bullet.FinishDelayed(2f);
             }
+
+            _isEven = !_isEven;
         }
         
         private void BossSkill2()

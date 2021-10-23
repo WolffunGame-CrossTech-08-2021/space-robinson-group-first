@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3894274899881324084}
   - component: {fileID: 3894274899881324110}
   - component: {fileID: -4567643705791021146}
+  - component: {fileID: 4789205547815421375}
   - component: {fileID: 3894274899881324087}
   - component: {fileID: 3894274899881324086}
   m_Layer: 8
@@ -122,6 +123,7 @@ MonoBehaviour:
   - {fileID: 3894274899881324084}
   - {fileID: 3894274899881324110}
   - {fileID: -4567643705791021146}
+  - {fileID: 4789205547815421375}
   shooting: {fileID: 3894274899881324110}
 --- !u!114 &3894274899881324084
 MonoBehaviour:
@@ -174,6 +176,19 @@ MonoBehaviour:
   entity: {fileID: 3894274899881324085}
   maxHealth: 5
   damageHeroAudio: {fileID: 8300000, guid: e028ae4f6e79ce740b8ee952acd8c3cd, type: 3}
+--- !u!114 &4789205547815421375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894274899881324111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b990bc1dfd2841edb321523917333669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 3894274899881324085}
 --- !u!82 &3894274899881324087
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using DG.Tweening;
 using ECS;
+using Manager;
 using UI;
 using UnityEngine;
 using Weapon.Data;
@@ -9,6 +10,7 @@ using Weapon.Logic.Melee;
 
 namespace Hero
 {
+    [System.Serializable]
     public class HeroShooting : BaseComponent
     {
         public GameObject weaponAndHands;
@@ -98,6 +100,9 @@ namespace Hero
 
         private void Turning()
         {
+            if (GameManager.Instance.isPaused)
+                return;
+            
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);

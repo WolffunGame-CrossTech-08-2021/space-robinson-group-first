@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4486215482421228568}
   - component: {fileID: 5843677301110708021}
   m_Layer: 9
-  m_Name: Boss
+  m_Name: Boss God's Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,13 @@ MonoBehaviour:
   components:
   - {fileID: 7384363564358739855}
   - {fileID: 4486215482421228568}
-  dropItems: []
+  dropItems:
+  - {fileID: 11400000, guid: e4b4af38ec4143f4e836d1843db8c57c, type: 2}
+  - {fileID: 11400000, guid: 53eb519d1f0ec094faa5b02ce25b2dae, type: 2}
+  - {fileID: 11400000, guid: be0139d21e30a81418012b70dee8c938, type: 2}
+  - {fileID: 11400000, guid: 0bc73aaefce1c2447932f9e4a2044e53, type: 2}
+  - {fileID: 11400000, guid: 89bb2049fa2af484fb975c8970293e53, type: 2}
+  - {fileID: 11400000, guid: 645330e5e8adaa243a1d9b08399c0bd3, type: 2}
 --- !u!114 &7384363564358739855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 6669980363017764508}
-  maxHealth: 1000
+  maxHealth: 10
   healthBar: {fileID: 5843677300615643887}
 --- !u!210 &5843677301110708021
 SortingGroup:
